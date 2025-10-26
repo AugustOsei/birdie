@@ -15,8 +15,8 @@ build/
 birdie-app/.env.production
 birdie-app/.env.local
 
-# Database
-data/
+# Database (only root data directory, not public/data)
+/data/
 *.db
 *.db-shm
 *.db-wal

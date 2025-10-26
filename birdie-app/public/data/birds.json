@@ -1,0 +1,301 @@
+{
+  "birds": [
+    {
+      "id": 1,
+      "name": "American Robin",
+      "scientificName": "Turdus migratorius",
+      "image": "/images/american-robin.png",
+      "facts": [
+        "American Robins are one of the first signs of spring and are known for their distinctive red-orange breast.",
+        "They can eat up to 14 feet of earthworms in a single day!",
+        "Robin eggs are famously blue, a color called 'robin egg blue.'"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Blue Jay",
+      "scientificName": "Cyanocitta cristata",
+      "image": "/images/blue-jay.png",
+      "facts": [
+        "Blue Jays are highly intelligent birds and can recognize individual humans.",
+        "They're excellent mimics and can imitate hawk calls to scare other birds away from feeders.",
+        "Blue Jays can carry acorns up to 150 miles away and bury them, helping oak trees spread."
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Cardinal",
+      "scientificName": "Cardinalis cardinalis",
+      "image": "/images/cardinal.png",
+      "facts": [
+        "Cardinals are one of the few bird species where both males and females sing.",
+        "The bright red male cardinals are more recognizable, but females are actually tan with reddish accents.",
+        "They mate for life and can raise up to three broods in a single breeding season."
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Chickadee",
+      "scientificName": "Poecile atricapillus",
+      "image": "/images/chickadee.png",
+      "facts": [
+        "Chickadees get their name from their distinctive 'chick-a-dee-dee-dee' call.",
+        "They have the ability to lower their body temperature at night to conserve energy.",
+        "Chickadees can remember thousands of hiding spots where they've cached seeds."
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Sparrow",
+      "scientificName": "Passer domesticus",
+      "image": "/images/sparrow.png",
+      "facts": [
+        "House Sparrows are found on every continent except Antarctica and are one of the most widespread bird species.",
+        "They're highly social and often gather in groups called 'charms' or 'quarrels.'",
+        "Male sparrows have a black bib that gets larger during breeding season to show dominance."
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Crow",
+      "scientificName": "Corvus brachyrhynchos",
+      "image": "/images/crow.png",
+      "facts": [
+        "Crows are among the most intelligent birds and can solve complex puzzles.",
+        "They can recognize individual human faces and remember people who have treated them poorly.",
+        "Crows hold 'funerals' for dead crows and can hold grudges for years."
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Pigeon",
+      "scientificName": "Columba livia",
+      "image": "/images/pigeon.png",
+      "facts": [
+        "Pigeons can navigate using the Earth's magnetic field and have an incredible homing ability.",
+        "They were used as messengers in both World Wars and saved thousands of lives.",
+        "Pigeons can see ultraviolet light, which helps them find food and recognize other pigeons."
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Seagull",
+      "scientificName": "Larus argentatus",
+      "image": "/images/seagull.png",
+      "facts": [
+        "Seagulls are highly adaptable birds that can drink both fresh and saltwater.",
+        "They're excellent problem-solvers and have learned to open chip bags and other food containers.",
+        "Seagulls communicate with each other using a complex system of calls and body language."
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Woodpecker",
+      "scientificName": "Picidae",
+      "image": "/images/woodpecker.png",
+      "facts": [
+        "Woodpeckers can peck up to 20 times per second without getting a headache thanks to special shock-absorbing tissues.",
+        "Their tongues are extremely long (sometimes longer than their heads) and coiled inside their skulls.",
+        "Woodpeckers don't sing; instead, they 'drum' on wood to communicate and establish territory."
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Owl",
+      "scientificName": "Strigiformes",
+      "image": "/images/owl.png",
+      "facts": [
+        "Owls can rotate their heads up to 270 degrees, giving them nearly complete vision around them.",
+        "They have asymmetrical ears that help them locate prey by sound alone.",
+        "Most owl species are nocturnal hunters with eyesight that is about 100 times better than humans in low light."
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Scarlet Tanager",
+      "scientificName": "Piranga olivacea",
+      "image": "/images/scarlet-tanager.png",
+      "facts": [
+        "Male Scarlet Tanagers are brilliant red with black wings, while females are yellow-green.",
+        "They migrate between South America and North America, traveling thousands of miles each year.",
+        "Scarlet Tanagers are insectivores and help control mosquito and other pest populations."
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Goldfinch",
+      "scientificName": "Carduelis tristis",
+      "image": "/images/goldfinch.png",
+      "facts": [
+        "American Goldfinches are the only finches that molt twice a year, changing colors dramatically.",
+        "In winter, they lose their bright yellow plumage and become a dull olive color.",
+        "Goldfinches have a special diet preference for thistle seeds and are attracted to nyjer feeders."
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Bluebird",
+      "scientificName": "Sialia sialis",
+      "image": "/images/bluebird.png",
+      "facts": [
+        "Eastern Bluebirds are cavity nesters and rely on nest boxes for breeding.",
+        "They were nearly driven to extinction but have made an amazing comeback thanks to conservation efforts.",
+        "Bluebirds are famous in folklore and are often considered symbols of happiness and hope."
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Hummingbird",
+      "scientificName": "Trochilidae",
+      "image": "/images/hummingbird.png",
+      "facts": [
+        "Hummingbirds are the only birds that can fly backwards and hover in mid-air.",
+        "Their wings beat up to 80 times per second, which creates the humming sound.",
+        "A hummingbird's heart can beat up to 1,260 times per minute, and they must eat every 10-15 minutes to survive."
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Kingfisher",
+      "scientificName": "Alcedinidae",
+      "image": "/images/kingfisher.png",
+      "facts": [
+        "Kingfishers are expert hunters that can dive at speeds up to 25 mph to catch fish.",
+        "They have special adaptations in their eyes that let them see fish underwater without distortion.",
+        "Kingfishers nest in burrows they dig into riverbanks, creating tunnels up to 4 feet long."
+      ]
+    },
+    {
+      "id": 16,
+      "name": "Toucan",
+      "scientificName": "Ramphastidae",
+      "image": "/images/toucan.png",
+      "facts": [
+        "Toucans have massive, colorful beaks that can be up to one-third the length of their entire body.",
+        "Despite their size, toucan beaks are surprisingly light because they're mostly hollow.",
+        "Toucans use their beaks to regulate body temperature by controlling blood flow to the beak."
+      ]
+    },
+    {
+      "id": 17,
+      "name": "Macaw",
+      "scientificName": "Ara",
+      "image": "/images/macaw.png",
+      "facts": [
+        "Macaws are one of the most intelligent bird species and can live 50+ years in the wild.",
+        "They mate for life and are often seen flying in pairs or small flocks.",
+        "Macaws can eat seeds and nuts that are toxic to other animals because their digestive systems are specially adapted."
+      ]
+    },
+    {
+      "id": 18,
+      "name": "Sunbird",
+      "scientificName": "Nectariniidae",
+      "image": "/images/sunbird.png",
+      "facts": [
+        "Sunbirds are tiny, jewel-like birds found in Africa, Asia, and Australia with iridescent plumage.",
+        "They have long curved beaks perfectly adapted for drinking nectar from flowers.",
+        "Sunbirds are often called 'African hummingbirds' because they fill a similar ecological niche."
+      ]
+    },
+    {
+      "id": 19,
+      "name": "Bee-eater",
+      "scientificName": "Meropidae",
+      "image": "/images/bee-eater.png",
+      "facts": [
+        "Bee-eaters are colorful birds that specialize in catching flying insects, including bees and wasps.",
+        "They can catch and eat hundreds of bees per day and are immune to most bee stings.",
+        "Bee-eaters are migratory birds and are known for their acrobatic flying displays."
+      ]
+    },
+    {
+      "id": 20,
+      "name": "Roller",
+      "scientificName": "Coraciidae",
+      "image": "/images/roller.png",
+      "facts": [
+        "Rollers get their name from their spectacular rolling and tumbling courtship displays in the air.",
+        "They have vibrant blue and green plumage and are found across Europe, Africa, and Asia.",
+        "Rollers are skilled hunters that catch insects and small lizards in mid-flight."
+      ]
+    },
+    {
+      "id": 21,
+      "name": "Puffin",
+      "scientificName": "Fratercula",
+      "image": "/images/puffin.png",
+      "facts": [
+        "Puffins have colorful beaks that brighten during breeding season and fade in winter.",
+        "They can hold multiple small fish in their beaks at once, sometimes up to 10 fish!",
+        "Puffins are excellent swimmers and use their wings to 'fly' underwater to catch fish."
+      ]
+    },
+    {
+      "id": 22,
+      "name": "Kiwi",
+      "scientificName": "Apteryx",
+      "image": "/images/kiwi.png",
+      "facts": [
+        "Kiwis are flightless birds native to New Zealand and are the national bird of the country.",
+        "They have nostrils at the tip of their beaks, unique among birds, which helps them smell food in the ground.",
+        "Kiwi eggs are enormous relative to body size—a kiwi egg can be up to 20% of the female's body weight!"
+      ]
+    },
+    {
+      "id": 23,
+      "name": "Secretary Bird",
+      "scientificName": "Sagittarius serpentarius",
+      "image": "/images/secretary-bird.png",
+      "facts": [
+        "Secretary Birds are unique raptors that hunt on the ground instead of from the air, walking up to 20 miles per day.",
+        "They stomp on prey with feet that can deliver kicks with over 500 pounds of force.",
+        "Secretary Birds got their name from the quill-like feathers on their heads that resemble quills secretaries once tucked behind their ears."
+      ]
+    },
+    {
+      "id": 24,
+      "name": "Hoopoe",
+      "scientificName": "Upupa epops",
+      "image": "/images/hoopoe.png",
+      "facts": [
+        "Hoopoes have a spectacular crest of feathers on their heads that they raise when alarmed or excited.",
+        "They have long, slightly curved beaks that they use to probe into the ground for insects.",
+        "Hoopoes are found across Europe, Asia, and Africa and are featured in folklore and ancient texts."
+      ]
+    },
+    {
+      "id": 25,
+      "name": "Lyrebird",
+      "scientificName": "Menura",
+      "image": "/images/lyrebird.png",
+      "facts": [
+        "Lyrebirds are famous for their incredible mimicry abilities and can perfectly imitate other bird calls and even mechanical sounds.",
+        "They've been recorded imitating chainsaws, car alarms, camera shutters, and other human-made sounds.",
+        "Male lyrebirds have elaborate tail feathers shaped like a lyre, which they display during courtship dances."
+      ]
+    },
+    {
+      "id": 26,
+      "name": "Waxwing",
+      "scientificName": "Bombycillidae",
+      "image": "/images/waxwing.png",
+      "facts": [
+        "Waxwings get their name from the waxy red tips on their wing feathers that resemble sealing wax.",
+        "They have a distinctive black mask across their eyes and a sharp crest on their heads.",
+        "Waxwings are highly social and travel in large flocks, sometimes in the hundreds."
+      ]
+    },
+    {
+      "id": 27,
+      "name": "Nuthatch",
+      "scientificName": "Sittidae",
+      "image": "/images/nuthatch.png",
+      "facts": [
+        "Nuthatches are unique birds that can walk headfirst down tree trunks, something most birds cannot do.",
+        "They get their name from their habit of wedging nuts into tree bark and 'hatching' them open with their beaks.",
+        "Nuthatches are acrobatic climbers and can rotate their feet 180 degrees to grip trees at different angles."
+      ]
+    }
+  ]
+}
