@@ -1,0 +1,1063 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  overflow-x: hidden;
+}
+
+.app {
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Sky background */
+.sky-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #87CEEB 0%, #E0F6FF 50%, #87CEEB 100%);
+  z-index: -1;
+}
+
+/* Cloud animations */
+.clouds {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.cloud {
+  position: absolute;
+  background: white;
+  border-radius: 100px;
+  opacity: 0.8;
+  animation: drift linear infinite;
+}
+
+.cloud::before,
+.cloud::after {
+  content: '';
+  position: absolute;
+  background: white;
+  border-radius: 100px;
+}
+
+.cloud-1 {
+  width: 100px;
+  height: 40px;
+  top: 20%;
+  animation-duration: 60s;
+}
+
+.cloud-1::before {
+  width: 50px;
+  height: 50px;
+  top: -25px;
+  left: 10px;
+}
+
+.cloud-1::after {
+  width: 60px;
+  height: 40px;
+  top: -15px;
+  right: 10px;
+}
+
+.cloud-2 {
+  width: 120px;
+  height: 50px;
+  top: 40%;
+  animation-duration: 80s;
+  animation-delay: -20s;
+}
+
+.cloud-2::before {
+  width: 60px;
+  height: 60px;
+  top: -30px;
+  left: 15px;
+}
+
+.cloud-2::after {
+  width: 70px;
+  height: 50px;
+  top: -20px;
+  right: 15px;
+}
+
+.cloud-3 {
+  width: 90px;
+  height: 35px;
+  top: 60%;
+  animation-duration: 70s;
+  animation-delay: -40s;
+}
+
+.cloud-3::before {
+  width: 45px;
+  height: 45px;
+  top: -20px;
+  left: 10px;
+}
+
+.cloud-3::after {
+  width: 55px;
+  height: 35px;
+  top: -15px;
+  right: 10px;
+}
+
+@keyframes drift {
+  from {
+    left: -150px;
+  }
+  to {
+    left: 100%;
+  }
+}
+
+/* Header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  cursor: pointer;
+}
+
+.logo-image {
+  height: 50px;
+  width: auto;
+}
+
+.header h1 {
+  color: #2C5F2D;
+  font-size: 2rem;
+  margin: 0;
+}
+
+.header-nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.header-button {
+  background: #4A90E2;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.header-button:hover {
+  background: #357ABD;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.mute-button {
+  background: transparent;
+  border: 2px solid #4A90E2;
+  color: #4A90E2;
+  font-size: 1.2rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mute-button:hover {
+  background: #4A90E2;
+  color: white;
+}
+
+/* Landing Page - Duolingo Style */
+.landing {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 0;
+  background: white;
+  padding-top: 80px;
+}
+
+.landing-content {
+  padding: 3rem 4rem;
+  text-align: left;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.local-storage-notice {
+  background: #E3F2FD;
+  border-left: 4px solid #4A90E2;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  color: #1976D2;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.landing-image {
+  width: 64%;
+  height: 100vh;
+  object-fit: contain;
+  object-position: center;
+}
+
+.landing-image-mobile {
+  display: none;
+}
+
+.landing h1 {
+  color: #2C5F2D;
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.landing p {
+  color: #555;
+  font-size: 1.2rem;
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+}
+
+.landing-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 2rem;
+}
+
+.primary-button {
+  background: #58CC02;
+  color: white;
+  border: none;
+  border-bottom: 4px solid #46A302;
+  padding: 1rem 2.5rem;
+  border-radius: 16px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.primary-button:hover {
+  background: #4CAF00;
+  transform: translateY(-1px);
+}
+
+.primary-button:active {
+  transform: translateY(2px);
+  border-bottom-width: 0px;
+}
+
+.primary-button:disabled {
+  background: #E5E5E5;
+  border-bottom-color: #AFAFAF;
+  color: #AFAFAF;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.secondary-button {
+  background: transparent;
+  color: #1CB0F6;
+  border: 2px solid #E5E5E5;
+  border-bottom: 4px solid #E5E5E5;
+  padding: 0.9rem 2.5rem;
+  border-radius: 16px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.secondary-button:hover {
+  background: #F7F7F7;
+  transform: translateY(-1px);
+}
+
+.secondary-button:active {
+  transform: translateY(2px);
+  border-bottom-width: 0px;
+}
+
+.countdown {
+  margin-top: 1rem;
+  color: #E74C3C;
+  font-size: 1.1rem;
+}
+
+/* Game Screen */
+.game-container {
+  min-height: 100vh;
+  padding-top: 80px;
+  padding-bottom: 2rem;
+}
+
+.game-header {
+  text-align: center;
+  padding: 1rem;
+  color: #2C5F2D;
+}
+
+.game-header h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.progress-indicator {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.progress-bar-container {
+  width: 100%;
+  max-width: 400px;
+  height: 12px;
+  background: #E5E5E5;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 0 auto;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #58CC02 0%, #46A302 100%);
+  border-radius: 10px;
+  transition: width 0.5s ease;
+  box-shadow: 0 2px 4px rgba(88, 204, 2, 0.3);
+}
+
+.bird-wire {
+  position: relative;
+  margin: 2rem auto;
+  max-width: 1200px;
+  padding: 2rem;
+}
+
+.wire {
+  position: relative;
+  height: 20px;
+  margin: 2rem 0;
+}
+
+.birds-on-wire {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  margin-top: -80px;
+}
+
+.bird-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 300px;
+}
+
+.bird-image-wrapper {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.bird-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+  transition: all 0.3s ease;
+  animation: birdIdle 3s ease-in-out infinite;
+}
+
+/* Idle animation - gentle bobbing and slight tilt */
+@keyframes birdIdle {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-8px) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(0) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-5px) rotate(1deg);
+  }
+}
+
+/* Different fly-away animations */
+.bird-image.flying-up {
+  animation: flyAwayUp 1.2s ease-in forwards;
+}
+
+.bird-image.flying-diagonal {
+  animation: flyAwayDiagonal 1.3s ease-in forwards;
+}
+
+.bird-image.flying-spiral {
+  animation: flyAwaySpiral 1.5s ease-in forwards;
+}
+
+/* Straight up flight */
+@keyframes flyAwayUp {
+  0% {
+    transform: translateY(0) scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  20% {
+    transform: translateY(-50px) scale(1.1) rotate(-5deg);
+  }
+  100% {
+    transform: translateY(-600px) scale(0.2) rotate(-10deg);
+    opacity: 0;
+  }
+}
+
+/* Diagonal flight with wing flapping effect */
+@keyframes flyAwayDiagonal {
+  0% {
+    transform: translateY(0) translateX(0) scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  15% {
+    transform: translateY(-40px) translateX(20px) scale(1.05) rotate(15deg);
+  }
+  30% {
+    transform: translateY(-80px) translateX(40px) scale(1) rotate(10deg);
+  }
+  50% {
+    transform: translateY(-200px) translateX(80px) scale(0.7) rotate(20deg);
+  }
+  100% {
+    transform: translateY(-550px) translateX(150px) scale(0.2) rotate(30deg);
+    opacity: 0;
+  }
+}
+
+/* Spiral flight */
+@keyframes flyAwaySpiral {
+  0% {
+    transform: translateY(0) translateX(0) scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  20% {
+    transform: translateY(-80px) translateX(-30px) scale(0.95) rotate(-45deg);
+  }
+  40% {
+    transform: translateY(-160px) translateX(30px) scale(0.85) rotate(45deg);
+  }
+  60% {
+    transform: translateY(-280px) translateX(-20px) scale(0.6) rotate(-90deg);
+  }
+  80% {
+    transform: translateY(-400px) translateX(40px) scale(0.4) rotate(90deg);
+  }
+  100% {
+    transform: translateY(-600px) translateX(0) scale(0.1) rotate(180deg);
+    opacity: 0;
+  }
+}
+
+.bird-image.wing-flap {
+  animation: wingFlap 0.5s ease-in-out infinite;
+}
+
+@keyframes wingFlap {
+  0%, 100% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(0.9) translateY(-5px);
+  }
+}
+
+.bird-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.option-button {
+  background: white;
+  border: 2px solid #4A90E2;
+  padding: 0.8rem;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: all 0.2s ease;
+  color: #333;
+}
+
+.option-button:hover {
+  background: #E3F2FD;
+  transform: translateY(-2px);
+}
+
+.option-button.selected {
+  background: #4A90E2;
+  color: white;
+  border-color: #357ABD;
+}
+
+.option-button.correct {
+  background: #4CAF50;
+  color: white;
+  border-color: #45A049;
+}
+
+.option-button.incorrect {
+  background: #E74C3C;
+  color: white;
+  border-color: #C0392B;
+}
+
+.option-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.game-actions {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.submit-button,
+.next-button {
+  background: #2C5F2D;
+  color: white;
+  border: none;
+  padding: 1rem 3rem;
+  border-radius: 30px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.submit-button:hover,
+.next-button:hover {
+  background: #1E4620;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.submit-button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Score Display */
+.score-display {
+  min-height: 100vh;
+  padding: 100px 2rem 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.score-card {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2rem;
+  border-radius: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.score-card h2 {
+  color: #2C5F2D;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.final-score {
+  font-size: 3rem;
+  color: #4A90E2;
+  font-weight: bold;
+  margin: 1rem 0;
+  animation: scorePopIn 0.5s ease-out;
+}
+
+@keyframes scorePopIn {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.achievement-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  justify-content: center;
+  margin: 1.5rem 0;
+}
+
+.achievement-badge {
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+  animation: badgeSlideIn 0.6s ease-out;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+@keyframes badgeSlideIn {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.badge-emoji {
+  font-size: 1.3rem;
+}
+
+.badge-text {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.streak-display {
+  font-size: 1.5rem;
+  color: #E67E22;
+  margin: 1rem 0;
+}
+
+.birds-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.bird-result {
+  background: white;
+  padding: 1rem;
+  border-radius: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.bird-result img {
+  width: 100%;
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+}
+
+.bird-result-name {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.result-indicator {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.5rem;
+}
+
+.fun-facts {
+  margin: 2rem 0;
+  text-align: left;
+}
+
+.fun-facts h3 {
+  color: #2C5F2D;
+  margin-bottom: 1rem;
+}
+
+.fact-item {
+  background: #E3F2FD;
+  padding: 1rem;
+  border-radius: 15px;
+  margin-bottom: 1rem;
+}
+
+.fact-item strong {
+  color: #4A90E2;
+}
+
+.score-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 2rem;
+}
+
+.modal {
+  background: white;
+  border-radius: 30px;
+  padding: 2rem;
+  max-width: 600px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #999;
+  transition: color 0.2s;
+}
+
+.modal-close:hover {
+  color: #333;
+}
+
+.modal h2 {
+  color: #2C5F2D;
+  margin-bottom: 1rem;
+}
+
+.modal p {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.email-signup {
+  margin-top: 2rem;
+}
+
+.email-signup input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 2px solid #4A90E2;
+  border-radius: 10px;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.email-signup button {
+  width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .landing {
+    grid-template-columns: 1fr;
+    padding-top: 60px;
+  }
+
+  .landing-image {
+    display: none;
+  }
+
+  .landing-image-mobile {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 50vh;
+    margin: 1.5rem 0;
+  }
+
+  .landing-content {
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .landing h1 {
+    font-size: 2.5rem;
+  }
+
+  .birds-on-wire {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .bird-container {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .birds-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .header {
+    padding: 0.5rem 1rem;
+  }
+
+  .header h1 {
+    font-size: 1.5rem;
+  }
+
+  .header-nav {
+    gap: 0.5rem;
+  }
+
+  .header-button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .birds-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .score-actions {
+    flex-direction: column;
+  }
+}
+
+/* Badges Screen */
+.badges-screen {
+  min-height: 100vh;
+  padding: 100px 2rem 2rem;
+  background: white;
+}
+
+.badges-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.badges-container h1 {
+  color: #2C5F2D;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.badges-subtitle {
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.badges-stats {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 1.5rem 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.stat-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2C5F2D;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badges-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 3rem 0;
+}
+
+.badge-card {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  border: 3px solid transparent;
+}
+
+.badge-card.earned {
+  border-color: #FFD700;
+  background: linear-gradient(135deg, #FFF9E6 0%, #FFFFFF 100%);
+}
+
+.badge-card.earned:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+}
+
+.badge-card.locked {
+  opacity: 0.5;
+  background: #F5F5F5;
+}
+
+.badge-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  filter: grayscale(0);
+}
+
+.badge-card.locked .badge-icon {
+  filter: grayscale(100%);
+  opacity: 0.4;
+}
+
+.badge-name {
+  font-size: 1.2rem;
+  color: #2C5F2D;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.badge-card.locked .badge-name {
+  color: #999;
+}
+
+.badge-description {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.8rem;
+  line-height: 1.4;
+}
+
+.badge-requirement {
+  font-size: 0.85rem;
+  color: #4A90E2;
+  font-weight: 600;
+  background: #E3F2FD;
+  padding: 0.5rem 1rem;
+  border-radius: 15px;
+  margin-top: 0.5rem;
+}
+
+.badge-card.locked .badge-requirement {
+  background: #E0E0E0;
+  color: #999;
+}
+
+.badge-earned-date {
+  font-size: 0.75rem;
+  color: #999;
+  margin-top: 0.8rem;
+  font-style: italic;
+}
+
+.badge-locked-overlay {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.5rem;
+}
+
+/* Responsive Badges */
+@media (max-width: 768px) {
+  .badges-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .badges-stats {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .stat-item {
+    width: 100%;
+  }
+}
+
+/* Landing Footer */
+.landing-footer {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #E0E0E0;
+}
+
+.footer-link {
+  color: #666;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+  font-weight: 500;
+}
+
+.footer-link:hover {
+  color: #2C5F2D;
+  text-decoration: underline;
+}
