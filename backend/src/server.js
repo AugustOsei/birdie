@@ -19,6 +19,30 @@ const subscribeLimit = rateLimit({
   message: { success: false, error: 'Too many subscription attempts, please try again later' }
 });
 
+// Admin authentication middleware
+const adminAuth = (req, res, next) => {
+  const apiKey = req.headers['x-api-key'] || req.query.key;
+  const validKey = process.env.ADMIN_API_KEY;
+
+  if (!validKey) {
+    console.error('⚠️  ADMIN_API_KEY not set in environment!');
+    return res.status(500).json({
+      success: false,
+      error: 'Server configuration error'
+    });
+  }
+
+  if (!apiKey || apiKey !== validKey) {
+    console.warn(`🚨 Unauthorized admin access attempt from ${req.socket.remoteAddress}`);
+    return res.status(401).json({
+      success: false,
+      error: 'Unauthorized - Invalid API key'
+    });
+  }
+
+  next();
+};
+
 // Health check endpoint
 app.get('/api/health', (req, res) => {
   res.json({
@@ -71,9 +95,9 @@ app.post('/api/subscribe', subscribeLimit, async (req, res) => {
   }
 });
 
-// Admin endpoint to export subscribers (protected - add auth later)
-app.get('/api/admin/export', (req, res) => {
-  // TODO: Add authentication middleware
+// Admin endpoint to export subscribers (PROTECTED)
+app.get('/api/admin/export', adminAuth, (req, res) => {
+  console.log(`📊 Admin export requested from ${req.socket.remoteAddress}`);
   const csv = exportToCSV();
   res.setHeader('Content-Type', 'text/csv');
   res.setHeader('Content-Disposition', 'attachment; filename=subscribers.csv');
