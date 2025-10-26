@@ -7,13 +7,13 @@ dist/
 */dist/
 build/
 
-# Environment files
+# Environment files (ignore secrets, but allow .env.production which only has public API URL)
 .env
 .env.local
-.env.production
 .env.development
-birdie-app/.env.production
 birdie-app/.env.local
+
+# Note: .env.production is NOT ignored - it contains public API URL only
 
 # Database (only root data directory, not public/data)
 /data/
