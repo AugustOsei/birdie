@@ -7,7 +7,7 @@ interface BadgesProps {
   onBack: () => void;
 }
 
-const Badges = ({ progress, onNavigate, onBack }: BadgesProps) => {
+const Badges = ({ progress, onNavigate: _onNavigate, onBack }: BadgesProps) => {
   const earnedBadgeIds = new Set(progress.earnedBadges.map(b => b.id));
 
   return (
