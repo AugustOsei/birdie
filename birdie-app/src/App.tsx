@@ -25,7 +25,7 @@ function App() {
   const [currentSet, setCurrentSet] = useState(0);
   const [allBirds, setAllBirds] = useState<Bird[]>([]);
   const [score, setScore] = useState(0);
-  const [newlyEarnedBadges, setNewlyEarnedBadges] = useState<typeof progress.earnedBadges>([]);
+  const [_newlyEarnedBadges, setNewlyEarnedBadges] = useState<typeof progress.earnedBadges>([]);
 
   useEffect(() => {
     fetch('/data/birds.json')
