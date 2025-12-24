@@ -163,6 +163,27 @@ const Game = ({
       <div className="game-actions">
         {!set.revealed ? (
           <>
+            <div className="mobile-controls">
+              <button
+                className="nav-arrow prev-arrow"
+                onClick={() => setMobileCurrentBird(Math.max(0, mobileCurrentBird - 1))}
+                disabled={mobileCurrentBird === 0}
+                aria-label="Previous bird"
+              >
+                ← PREV
+              </button>
+              <div className="bird-counter">
+                Bird {mobileCurrentBird + 1} of {set.birds.length}
+              </div>
+              <button
+                className="nav-arrow next-arrow"
+                onClick={() => setMobileCurrentBird(Math.min(set.birds.length - 1, mobileCurrentBird + 1))}
+                disabled={mobileCurrentBird === set.birds.length - 1}
+                aria-label="Next bird"
+              >
+                NEXT →
+              </button>
+            </div>
             <button
               className="submit-button"
               onClick={onSubmit}
@@ -170,13 +191,12 @@ const Game = ({
             >
               SUBMIT
             </button>
-            <div className="mobile-bird-nav">
+            <div className="mobile-bird-nav revealed">
               {set.birds.map((_, index) => (
                 <button
                   key={index}
                   className={`bird-nav-dot ${index === mobileCurrentBird ? 'active' : ''}`}
                   onClick={() => setMobileCurrentBird(index)}
-                  disabled={set.revealed}
                   aria-label={`Bird ${index + 1}`}
                 />
               ))}
@@ -187,7 +207,7 @@ const Game = ({
             <button className="next-button" onClick={onNext}>
               {currentSet < sets.length - 1 ? 'NEXT SET' : 'SEE RESULTS'}
             </button>
-            <div className="mobile-bird-nav">
+            <div className="mobile-bird-nav revealed">
               {set.birds.map((_, index) => (
                 <button
                   key={index}

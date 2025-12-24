@@ -405,6 +405,10 @@ body {
   .mobile-bird-nav {
     display: none;
   }
+
+  .mobile-controls {
+    display: none;
+  }
 }
 
 .bird-image-wrapper {
@@ -873,12 +877,58 @@ body {
     display: flex;
   }
 
+  .mobile-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 1.5rem auto;
+    max-width: 320px;
+    padding: 0 1rem;
+  }
+
+  .nav-arrow {
+    flex: 1;
+    padding: 0.6rem 0.8rem;
+    background-color: #4A90E2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .nav-arrow:hover:not(:disabled) {
+    background-color: #357ABD;
+    transform: scale(1.05);
+  }
+
+  .nav-arrow:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  .bird-counter {
+    flex: 1;
+    text-align: center;
+    font-weight: 600;
+    color: #2C5F2D;
+    font-size: 0.95rem;
+  }
+
   .mobile-bird-nav {
     display: flex;
     gap: 0.8rem;
     justify-content: center;
     margin-top: 1.5rem;
     flex-wrap: wrap;
+  }
+
+  .mobile-bird-nav.revealed {
+    margin-top: 1rem;
   }
 
   .bird-nav-dot {
