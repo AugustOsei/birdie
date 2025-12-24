@@ -22,6 +22,7 @@ const Game = ({
 }: GameProps) => {
   const [flyingBirds, setFlyingBirds] = useState<Set<number>>(new Set());
   const [birdAnimations, setBirdAnimations] = useState<Map<number, string>>(new Map());
+  const [mobileCurrentBird, setMobileCurrentBird] = useState(0);
   const set = sets[currentSet];
 
   // Assign random fly-away animations to each bird
@@ -36,6 +37,11 @@ const Game = ({
 
     setBirdAnimations(animations);
   }, [set.birds]);
+
+  // Reset mobile bird index when set changes
+  useEffect(() => {
+    setMobileCurrentBird(0);
+  }, [currentSet]);
 
   useEffect(() => {
     audioManager.setMuted(isMuted);
@@ -123,8 +129,11 @@ const Game = ({
       <div className="bird-wire">
         <div className="wire"></div>
         <div className="birds-on-wire">
-          {set.birds.map((bird) => (
-            <div key={bird.id} className="bird-container">
+          {set.birds.map((bird, index) => (
+            <div
+              key={bird.id}
+              className={`bird-container ${index === mobileCurrentBird ? 'mobile-visible' : 'mobile-hidden'}`}
+            >
               <div className="bird-image-wrapper">
                 <img
                   src={bird.image}
@@ -153,17 +162,42 @@ const Game = ({
 
       <div className="game-actions">
         {!set.revealed ? (
-          <button
-            className="submit-button"
-            onClick={onSubmit}
-            disabled={!isAllAnswered}
-          >
-            SUBMIT
-          </button>
+          <>
+            <button
+              className="submit-button"
+              onClick={onSubmit}
+              disabled={!isAllAnswered}
+            >
+              SUBMIT
+            </button>
+            <div className="mobile-bird-nav">
+              {set.birds.map((_, index) => (
+                <button
+                  key={index}
+                  className={`bird-nav-dot ${index === mobileCurrentBird ? 'active' : ''}`}
+                  onClick={() => setMobileCurrentBird(index)}
+                  disabled={set.revealed}
+                  aria-label={`Bird ${index + 1}`}
+                />
+              ))}
+            </div>
+          </>
         ) : (
-          <button className="next-button" onClick={onNext}>
-            {currentSet < sets.length - 1 ? 'NEXT SET' : 'SEE RESULTS'}
-          </button>
+          <>
+            <button className="next-button" onClick={onNext}>
+              {currentSet < sets.length - 1 ? 'NEXT SET' : 'SEE RESULTS'}
+            </button>
+            <div className="mobile-bird-nav">
+              {set.birds.map((_, index) => (
+                <button
+                  key={index}
+                  className={`bird-nav-dot ${index === mobileCurrentBird ? 'active' : ''}`}
+                  onClick={() => setMobileCurrentBird(index)}
+                  aria-label={`Bird ${index + 1}`}
+                />
+              ))}
+            </div>
+          </>
         )}
       </div>
     </div>
