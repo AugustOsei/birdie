@@ -4,13 +4,13 @@ FROM node:18-alpine
 WORKDIR /app
 
 # Copy package files
-COPY package*.json ./
+COPY backend/package*.json ./
 
 # Install production dependencies only
 RUN npm ci --only=production
 
 # Copy source code
-COPY src ./src
+COPY backend/src ./src
 
 # Create data directory for SQLite
 RUN mkdir -p /app/data
