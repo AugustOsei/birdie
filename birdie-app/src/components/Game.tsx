@@ -47,6 +47,16 @@ const Game = ({
     audioManager.setMuted(isMuted);
   }, [isMuted]);
 
+  // Start ambient background sounds when game loads
+  useEffect(() => {
+    if (!isMuted) {
+      audioManager.playAmbient();
+    }
+    return () => {
+      audioManager.stopAmbient();
+    };
+  }, [isMuted]);
+
   useEffect(() => {
     if (set.revealed) {
       const correctBirds: number[] = [];

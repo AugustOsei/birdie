@@ -1,6 +1,7 @@
 class AudioManager {
   private audioContext: AudioContext | null = null;
   private isMuted = false;
+  private ambientTimeoutIds: ReturnType<typeof setTimeout>[] = [];
 
   constructor() {
     if (typeof window !== 'undefined' && 'AudioContext' in window) {
@@ -10,6 +11,11 @@ class AudioManager {
 
   setMuted(muted: boolean) {
     this.isMuted = muted;
+  }
+
+  stopAmbient() {
+    this.ambientTimeoutIds.forEach(id => clearTimeout(id));
+    this.ambientTimeoutIds = [];
   }
 
   // Play a simple synthesized whoosh sound
@@ -147,20 +153,69 @@ class AudioManager {
     });
   }
 
+  // Play soft ambient pad background
+  private playAmbientPad() {
+    if (this.isMuted || !this.audioContext) return;
+
+    const ctx = this.audioContext;
+    const now = ctx.currentTime;
+
+    // Create a soft, sustained pad with very low volume
+    const osc = ctx.createOscillator();
+    const gainNode = ctx.createGain();
+
+    osc.connect(gainNode);
+    gainNode.connect(ctx.destination);
+
+    // Very low frequency base tone (subsonic-ish) for ambient feel
+    osc.frequency.setValueAtTime(55, now); // A1 - very low, soothing
+
+    // Very low volume for background
+    gainNode.gain.setValueAtTime(0.02, now);
+
+    osc.start(now);
+    osc.stop(now + 4);
+
+    return {
+      oscillator: osc,
+      gainNode: gainNode,
+    };
+  }
+
   // Play ambient bird sounds (background)
   playAmbient() {
     if (this.isMuted || !this.audioContext) return;
 
-    // Random chirps at intervals
-    const playRandomChirp = () => {
+    this.stopAmbient(); // Clear any existing ambient sounds
+
+    // Play initial ambient pad
+    this.playAmbientPad();
+
+    // Schedule ambient pads every 4 seconds
+    const scheduleAmbientPad = () => {
       if (!this.isMuted) {
-        this.playChirp();
-        const nextDelay = 2000 + Math.random() * 4000; // 2-6 seconds
-        setTimeout(playRandomChirp, nextDelay);
+        this.playAmbientPad();
+        const padTimeout = setTimeout(scheduleAmbientPad, 4000);
+        this.ambientTimeoutIds.push(padTimeout);
       }
     };
 
-    setTimeout(playRandomChirp, 1000 + Math.random() * 2000);
+    const padTimeout = setTimeout(scheduleAmbientPad, 4000);
+    this.ambientTimeoutIds.push(padTimeout);
+
+    // Random chirps at intervals (2-8 seconds)
+    const playRandomChirp = () => {
+      if (!this.isMuted) {
+        this.playChirp();
+        const nextDelay = 2000 + Math.random() * 6000; // 2-8 seconds
+        const chirpTimeout = setTimeout(playRandomChirp, nextDelay);
+        this.ambientTimeoutIds.push(chirpTimeout);
+      }
+    };
+
+    const initialDelay = 1000 + Math.random() * 2000;
+    const chirpTimeout = setTimeout(playRandomChirp, initialDelay);
+    this.ambientTimeoutIds.push(chirpTimeout);
   }
 }
 

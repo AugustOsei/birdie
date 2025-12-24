@@ -1,8 +1,9 @@
-import { useMemo, useEffect } from 'react';
+import { useMemo, useEffect, useState } from 'react';
 import confetti from 'canvas-confetti';
 import type { Bird, GameSet, UserProgress, Screen } from '../types';
 import { getRandomFacts } from '../utils/gameLogic';
 import { useCountUp } from '../hooks/useCountUp';
+import ShareModal from './ShareModal';
 
 interface ScoreDisplayProps {
   sets: GameSet[];
@@ -12,6 +13,7 @@ interface ScoreDisplayProps {
 }
 
 const ScoreDisplay = ({ sets, score, progress, onNavigate }: ScoreDisplayProps) => {
+  const [showShareModal, setShowShareModal] = useState(false);
   const totalBirds = sets.reduce((acc, set) => acc + set.birds.length, 0);
   const allBirds = useMemo(() => sets.flatMap((set) => set.birds), [sets]);
   const randomFacts = useMemo(() => getRandomFacts(allBirds, 3), [allBirds]);
@@ -63,35 +65,16 @@ const ScoreDisplay = ({ sets, score, progress, onNavigate }: ScoreDisplayProps) 
   }, [isPerfectScore]);
 
   const handleShare = () => {
-    const shareText = `I got ${score}/${totalBirds} birds correct in Birdie! ${progress.consecutivePerfectScores > 0 ? `${progress.consecutivePerfectScores} perfect scores in a row!` : ''}\n\nCan you beat my score?`;
-    if (navigator.share) {
-      navigator.share({
-        title: 'Birdie Game',
-        text: shareText,
-      }).catch(console.error);
-    } else {
-      navigator.clipboard.writeText(shareText);
-      alert('Score copied to clipboard!');
-    }
-  };
-
-  const handleInvite = () => {
-    const inviteText = 'Check out Birdie - a daily bird guessing game! Can you beat my score?';
-    if (navigator.share) {
-      navigator.share({
-        title: 'Play Birdie',
-        text: inviteText,
-        url: window.location.href,
-      }).catch(console.error);
-    } else {
-      navigator.clipboard.writeText(`${inviteText} ${window.location.href}`);
-      alert('Invite link copied to clipboard!');
-    }
+    setShowShareModal(true);
   };
 
   const getBirdResult = (bird: Bird, set: GameSet): boolean => {
     const userAnswer = set.userAnswers.get(bird.id);
     return userAnswer === bird.name;
+  };
+
+  const getUserAnswer = (bird: Bird, set: GameSet): string | undefined => {
+    return set.userAnswers.get(bird.id);
   };
 
   return (
@@ -132,15 +115,30 @@ const ScoreDisplay = ({ sets, score, progress, onNavigate }: ScoreDisplayProps) 
 
         <div className="birds-grid">
           {sets.map((set) =>
-            set.birds.map((bird) => (
-              <div key={bird.id} className="bird-result">
-                <span className="result-indicator">
-                  {getBirdResult(bird, set) ? '✅' : '❌'}
-                </span>
-                <img src={bird.image} alt={bird.name} />
-                <div className="bird-result-name">{bird.name}</div>
-              </div>
-            ))
+            set.birds.map((bird) => {
+              const isCorrect = getBirdResult(bird, set);
+              const userAnswer = getUserAnswer(bird, set);
+              return (
+                <div key={bird.id} className={`bird-result ${isCorrect ? 'correct' : 'incorrect'}`}>
+                  <span className="result-indicator">
+                    {isCorrect ? '✅' : '❌'}
+                  </span>
+                  <img src={bird.image} alt={bird.name} />
+                  {isCorrect ? (
+                    <div className="bird-result-name correct-answer">{bird.name}</div>
+                  ) : (
+                    <div className="answer-feedback">
+                      <div className="user-answer">
+                        Your answer: <span className="wrong-text">{userAnswer}</span>
+                      </div>
+                      <div className="correct-answer">
+                        Correct: <span className="right-text">{bird.name}</span>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              );
+            })
           )}
         </div>
 
@@ -163,13 +161,19 @@ const ScoreDisplay = ({ sets, score, progress, onNavigate }: ScoreDisplayProps) 
           <button className="secondary-button" onClick={handleShare}>
             SHARE SCORE
           </button>
-          <button className="secondary-button" onClick={handleInvite}>
-            INVITE FRIENDS
-          </button>
           <button className="secondary-button" onClick={() => onNavigate('landing')}>
             BACK HOME
           </button>
         </div>
+
+        {showShareModal && (
+          <ShareModal
+            score={score}
+            totalBirds={totalBirds}
+            consecutivePerfectScores={progress.consecutivePerfectScores}
+            onClose={() => setShowShareModal(false)}
+          />
+        )}
       </div>
     </div>
   );
