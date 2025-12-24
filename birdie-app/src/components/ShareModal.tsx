@@ -44,7 +44,7 @@ const ShareModal = ({
   };
 
   const handleSharePlatform = (platform: string) => {
-    const text = messages[platform as keyof typeof messages];
+    const text = messages[platform as keyof typeof messages] || messages.generic;
     const urlToShare = `${text} ${shareUrl}`;
 
     switch (platform) {
