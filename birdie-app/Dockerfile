@@ -4,13 +4,13 @@ FROM node:18-alpine as build
 WORKDIR /app
 
 # Copy package files
-COPY package*.json ./
+COPY birdie-app/package*.json ./
 
 # Install dependencies
 RUN npm ci
 
 # Copy source code
-COPY . .
+COPY birdie-app/ .
 
 # Build the app
 RUN npm run build
