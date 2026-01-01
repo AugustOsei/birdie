@@ -7,6 +7,8 @@ import Game from './components/Game';
 import ScoreDisplay from './components/ScoreDisplay';
 import Modal from './components/Modal';
 import Badges from './components/Badges';
+import BirdieProGame from './components/BirdieProGame';
+import BirdieProResults from './components/BirdieProResults';
 import type { Bird, Screen, GameSet, UserProgress, GameHistory } from './types';
 import {
   loadProgress,
@@ -14,6 +16,7 @@ import {
   addGameToHistory,
   toggleMute,
   getDateString,
+  updateBirdieProScore,
 } from './utils/storage';
 import { generateDailyGame, calculateScore } from './utils/gameLogic';
 
@@ -25,6 +28,7 @@ function App() {
   const [currentSet, setCurrentSet] = useState(0);
   const [allBirds, setAllBirds] = useState<Bird[]>([]);
   const [score, setScore] = useState(0);
+  const [proScore, setProScore] = useState(0);
   const [_newlyEarnedBadges, setNewlyEarnedBadges] = useState<typeof progress.earnedBadges>([]);
 
   useEffect(() => {
@@ -94,6 +98,21 @@ function App() {
     }
   };
 
+  const startBirdiePro = () => {
+    if (allBirds.length > 0) {
+      setProScore(0);
+      setScreen('birdie-pro');
+    }
+  };
+
+  const handleBirdieProScore = (score: number) => {
+    setProScore(score);
+    const updatedProgress = updateBirdieProScore(progress, score);
+    setProgress(updatedProgress);
+    saveProgress(updatedProgress);
+    setScreen('birdie-pro-score');
+  };
+
   const handleNavigate = (newScreen: Screen) => {
     if (newScreen === 'about-game' || newScreen === 'about-us') {
       // Store current screen before opening modal
@@ -105,6 +124,8 @@ function App() {
       setScreen(newScreen);
     } else if (newScreen === 'game') {
       startGame();
+    } else if (newScreen === 'birdie-pro') {
+      startBirdiePro();
     } else {
       setScreen(newScreen);
     }
@@ -168,6 +189,23 @@ function App() {
             onBack={handleBackFromBadges}
           />
         );
+      case 'birdie-pro':
+        return (
+          <BirdieProGame
+            birds={allBirds}
+            onSubmit={handleBirdieProScore}
+            isMuted={progress.muteSounds}
+          />
+        );
+      case 'birdie-pro-score':
+        return (
+          <BirdieProResults
+            score={proScore}
+            bestScore={progress.birdiePro.bestScore}
+            totalAttempts={progress.birdiePro.totalAttempts}
+            onNavigate={handleNavigate}
+          />
+        );
       default:
         return (
           <Landing
@@ -185,7 +223,7 @@ function App() {
         onNavigate={handleNavigate}
         onToggleMute={handleToggleMute}
         isMuted={progress.muteSounds}
-        showNav={screen !== 'landing'}
+        showNav={screen !== 'landing' && screen !== 'birdie-pro' && screen !== 'birdie-pro-score'}
       />
       {renderScreen()}
       {(screen === 'about-game' || screen === 'about-us') && (

@@ -45,6 +45,12 @@ export interface Badge {
   level?: number;
 }
 
+export interface BirdieProStats {
+  lastAttempt: string | null; // ISO string timestamp
+  bestScore: number;
+  totalAttempts: number;
+}
+
 export interface UserProgress {
   totalGamesPlayed: number;
   history: GameHistory[];
@@ -52,6 +58,7 @@ export interface UserProgress {
   consecutivePerfectScores: number;
   earnedBadges: Badge[];
   allTimePerfectScores: number;
+  birdiePro: BirdieProStats;
 }
 
-export type Screen = 'landing' | 'game' | 'score' | 'about-game' | 'about-us' | 'badges';
+export type Screen = 'landing' | 'game' | 'score' | 'about-game' | 'about-us' | 'badges' | 'birdie-pro' | 'birdie-pro-score';

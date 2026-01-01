@@ -1,4 +1,7 @@
+import { useState } from 'react';
 import type { Screen, UserProgress } from '../types';
+import ProInviteModal from './ProInviteModal';
+import { canPlayBirdieProNow } from '../utils/storage';
 
 interface LandingProps {
   onNavigate: (screen: Screen) => void;
@@ -6,6 +9,8 @@ interface LandingProps {
 }
 
 const Landing = ({ onNavigate, progress }: LandingProps) => {
+  const [showProModal, setShowProModal] = useState(true);
+  const canPlayPro = canPlayBirdieProNow(progress);
   return (
     <div className="landing">
       <div className="landing-content">
@@ -32,6 +37,14 @@ const Landing = ({ onNavigate, progress }: LandingProps) => {
 
         <div className="landing-buttons">
           <button
+            className="pro-button"
+            onClick={() => setShowProModal(true)}
+            disabled={!canPlayPro}
+            title={!canPlayPro ? 'Come back in 24 hours' : 'Try the ultimate challenge!'}
+          >
+            🔥 BIRDIE PRO 🔥
+          </button>
+          <button
             className="primary-button"
             onClick={() => onNavigate('game')}
           >
@@ -56,6 +69,17 @@ const Landing = ({ onNavigate, progress }: LandingProps) => {
         </footer>
       </div>
       <img src="/birdie_bk1.png" alt="Birds" className="landing-image" />
+
+      {showProModal && (
+        <ProInviteModal
+          progress={progress}
+          onTryIt={() => {
+            setShowProModal(false);
+            onNavigate('birdie-pro');
+          }}
+          onDismiss={() => setShowProModal(false)}
+        />
+      )}
     </div>
   );
 };

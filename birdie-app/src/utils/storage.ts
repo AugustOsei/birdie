@@ -10,6 +10,11 @@ export const getDefaultProgress = (): UserProgress => ({
   consecutivePerfectScores: 0,
   earnedBadges: [],
   allTimePerfectScores: 0,
+  birdiePro: {
+    lastAttempt: null,
+    bestScore: 0,
+    totalAttempts: 0,
+  },
 });
 
 export const loadProgress = (): UserProgress => {
@@ -103,5 +108,44 @@ export const toggleMute = (progress: UserProgress): UserProgress => {
   return {
     ...progress,
     muteSounds: !progress.muteSounds,
+  };
+};
+
+export const canPlayBirdieProNow = (progress: UserProgress): boolean => {
+  if (!progress.birdiePro.lastAttempt) {
+    return true; // First time
+  }
+
+  const lastAttempt = new Date(progress.birdiePro.lastAttempt);
+  const now = new Date();
+  const hoursDiff = (now.getTime() - lastAttempt.getTime()) / (1000 * 60 * 60);
+
+  return hoursDiff >= 24;
+};
+
+export const getTimeUntilNextBirdieProAttempt = (progress: UserProgress): number => {
+  if (!progress.birdiePro.lastAttempt) {
+    return 0;
+  }
+
+  const lastAttempt = new Date(progress.birdiePro.lastAttempt);
+  const nextAttempt = new Date(lastAttempt.getTime() + 24 * 60 * 60 * 1000);
+  const now = new Date();
+
+  const msUntil = nextAttempt.getTime() - now.getTime();
+  return msUntil > 0 ? msUntil : 0;
+};
+
+export const updateBirdieProScore = (
+  progress: UserProgress,
+  score: number
+): UserProgress => {
+  return {
+    ...progress,
+    birdiePro: {
+      lastAttempt: new Date().toISOString(),
+      bestScore: Math.max(progress.birdiePro.bestScore, score),
+      totalAttempts: progress.birdiePro.totalAttempts + 1,
+    },
   };
 };
