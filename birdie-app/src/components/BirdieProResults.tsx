@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import confetti from 'canvas-confetti';
 import type { Screen } from '../types';
 import { useCountUp } from '../hooks/useCountUp';
+import ShareModal from './ShareModal';
 
 interface BirdieProResultsProps {
   score: number;
@@ -19,6 +20,7 @@ const BirdieProResults = ({
   const totalBirds = 28;
   const animatedScore = useCountUp(score, 1500);
   const [shareMessage, setShareMessage] = useState('');
+  const [showShareModal, setShowShareModal] = useState(false);
 
   // Determine message based on score
   useEffect(() => {
@@ -116,7 +118,7 @@ const BirdieProResults = ({
           </button>
           <button
             className="pro-secondary-button"
-            onClick={() => onNavigate('landing')}
+            onClick={() => setShowShareModal(true)}
           >
             SHARE & CHALLENGE
           </button>
@@ -126,6 +128,15 @@ const BirdieProResults = ({
           ⏳ Come back in 24 hours to try again!
         </div>
       </div>
+
+      {showShareModal && (
+        <ShareModal
+          score={score}
+          totalBirds={totalBirds}
+          consecutivePerfectScores={0}
+          onClose={() => setShowShareModal(false)}
+        />
+      )}
     </div>
   );
 };
