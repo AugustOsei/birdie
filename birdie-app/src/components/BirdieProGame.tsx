@@ -115,87 +115,112 @@ const BirdieProGame = ({ birds, onSubmit, isMuted }: BirdieProGameProps) => {
   const progress = ((gameState.currentBirdIndex + 1) / birds.length) * 100;
 
   return (
-    <div className="birdie-pro-game-container">
-      <div className="pro-game-header">
-        <h2>🔥 BIRDIE PRO 🔥</h2>
-        <p className="pro-progress-text">
+    <div className="game-container">
+      <div className="game-header">
+        <h2 style={{ color: '#FFD700' }}>🔥 BIRDIE PRO 🔥</h2>
+        <p className="progress-indicator">
           Bird {gameState.currentBirdIndex + 1} of {birds.length}
         </p>
-        <div className="pro-progress-bar-container">
+        <div className="progress-bar-container">
           <div
-            className="pro-progress-bar-fill"
+            className="progress-bar-fill pro-gradient"
             style={{ width: `${progress}%` }}
           />
         </div>
       </div>
 
-      <div className="pro-game-content">
-        <div className="pro-bird-container">
-          <img
-            src={currentBird.image}
-            alt="Mystery bird"
-            className="pro-bird-image"
-          />
-        </div>
-
-        <div className="pro-options-container">
-          {currentOptions.map((option, idx) => {
-            const isSelected = userAnswer === option.bird.name;
+      <div className="bird-wire">
+        <div className="wire"></div>
+        <div className="birds-on-wire">
+          {birds.map((bird, index) => {
+            const options = currentOptions;
+            const isCurrentBird = index === gameState.currentBirdIndex;
             return (
-              <button
-                key={idx}
-                className={`pro-option-button ${isSelected ? 'selected' : ''}`}
-                onClick={() => handleSelectAnswer(option.bird.name)}
-                disabled={gameState.revealed}
+              <div
+                key={bird.id}
+                className={`bird-container ${isCurrentBird ? 'mobile-visible' : 'mobile-hidden'}`}
               >
-                {option.bird.name}
-              </button>
+                <div className="bird-image-wrapper">
+                  <img
+                    src={bird.image}
+                    alt="Mystery bird"
+                    className="bird-image"
+                  />
+                </div>
+                <div className="bird-options">
+                  {options.map((option, idx) => {
+                    const isSelected = userAnswer === option.bird.name;
+                    return (
+                      <button
+                        key={idx}
+                        className={`option-button ${isSelected ? 'selected' : ''}`}
+                        onClick={() => handleSelectAnswer(option.bird.name)}
+                        disabled={gameState.revealed}
+                      >
+                        {option.bird.name}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
             );
           })}
         </div>
       </div>
 
-      <div className="pro-game-actions">
-        <button
-          className="pro-nav-button prev-btn"
-          onClick={handlePrevious}
-          disabled={gameState.currentBirdIndex === 0}
-          aria-label="Previous bird"
-        >
-          ← PREV
-        </button>
-
-        <div className="pro-answer-indicator">
-          {userAnswer ? (
-            <span className="answer-selected">✓ Selected</span>
-          ) : (
-            <span className="answer-needed">⚠ Need Answer</span>
-          )}
-        </div>
-
-        <button
-          className="pro-nav-button next-btn"
-          onClick={handleNext}
-          disabled={gameState.currentBirdIndex === birds.length - 1}
-          aria-label="Next bird"
-        >
-          NEXT →
-        </button>
-      </div>
-
-      <div className="pro-submit-section">
+      <div className="game-actions">
         {!gameState.revealed ? (
-          <button
-            className="pro-submit-button"
-            onClick={handleSubmit}
-            disabled={!allAnswered}
-          >
-            {allAnswered ? 'SUBMIT ALL ANSWERS' : `Answer ${gameState.userAnswers.size}/${birds.length}`}
-          </button>
+          <>
+            <div className="mobile-controls">
+              <button
+                className="nav-arrow prev-arrow"
+                onClick={handlePrevious}
+                disabled={gameState.currentBirdIndex === 0}
+                aria-label="Previous bird"
+              >
+                ← PREV
+              </button>
+              <div className="bird-counter">
+                Bird {gameState.currentBirdIndex + 1} of {birds.length}
+              </div>
+              <button
+                className="nav-arrow next-arrow"
+                onClick={handleNext}
+                disabled={gameState.currentBirdIndex === birds.length - 1}
+                aria-label="Next bird"
+              >
+                NEXT →
+              </button>
+            </div>
+            <button
+              className="submit-button pro-button"
+              onClick={handleSubmit}
+              disabled={!allAnswered}
+            >
+              {allAnswered ? 'SUBMIT ALL ANSWERS' : `Answer ${gameState.userAnswers.size}/${birds.length}`}
+            </button>
+            <div className="mobile-bird-nav">
+              {birds.map((_, index) => (
+                <button
+                  key={index}
+                  className={`bird-nav-dot ${index === gameState.currentBirdIndex ? 'active' : ''}`}
+                  onClick={() => {
+                    setGameState(prev => ({
+                      ...prev,
+                      currentBirdIndex: index,
+                    }));
+                  }}
+                  aria-label={`Bird ${index + 1}`}
+                />
+              ))}
+            </div>
+          </>
         ) : (
-          <div className="pro-submitting">
-            Calculating your score...
-          </div>
+          <>
+            <div className="pro-submitting" style={{ padding: '1rem', textAlign: 'center' }}>
+              Calculating your score...
+            </div>
+          </>
         )}
       </div>
     </div>
