@@ -199,20 +199,8 @@ const BirdieProGame = ({ birds, onSubmit, isMuted }: BirdieProGameProps) => {
             >
               {allAnswered ? 'SUBMIT ALL ANSWERS' : `Answer ${gameState.userAnswers.size}/${birds.length}`}
             </button>
-            <div className="mobile-bird-nav">
-              {birds.map((_, index) => (
-                <button
-                  key={index}
-                  className={`bird-nav-dot ${index === gameState.currentBirdIndex ? 'active' : ''}`}
-                  onClick={() => {
-                    setGameState(prev => ({
-                      ...prev,
-                      currentBirdIndex: index,
-                    }));
-                  }}
-                  aria-label={`Bird ${index + 1}`}
-                />
-              ))}
+            <div className="pro-progress-counter">
+              Answered: <strong>{gameState.userAnswers.size}</strong>/{birds.length}
             </div>
           </>
         ) : (

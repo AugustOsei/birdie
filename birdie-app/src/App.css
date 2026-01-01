@@ -1036,6 +1036,19 @@ body {
     cursor: not-allowed;
   }
 
+  .pro-progress-counter {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: #666;
+    font-weight: 600;
+  }
+
+  .pro-progress-counter strong {
+    color: #FFD700;
+    font-size: 1.1rem;
+  }
+
   .birds-grid {
     grid-template-columns: repeat(2, 1fr);
   }
