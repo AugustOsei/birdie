@@ -1848,9 +1848,10 @@ body {
 
 /* Birdie Pro Results */
 .birdie-pro-results-container {
-  padding: 1rem 1rem;
+  padding: 100px 1rem 1rem;
   max-width: 600px;
   margin: 0 auto;
+  min-height: 100vh;
 }
 
 .pro-results-card {
