@@ -9,7 +9,7 @@ interface LandingProps {
 }
 
 const Landing = ({ onNavigate, progress }: LandingProps) => {
-  const [showProModal, setShowProModal] = useState(true);
+  const [showProModal, setShowProModal] = useState(false);
   const canPlayPro = canPlayBirdieProNow(progress);
   return (
     <div className="landing">
@@ -21,7 +21,7 @@ const Landing = ({ onNavigate, progress }: LandingProps) => {
         <h1>A fun way to learn about birds</h1>
         <p>Identify birds. Earn badges. Become a certified birder!</p>
 
-        <img src="/birdie_bk1.png" alt="Birds" className="landing-image-mobile" />
+        <img src="/love birds.png" alt="Love birds" className="landing-image-mobile" />
 
         {progress.consecutivePerfectScores > 0 && (
           <div className="streak-display" style={{ marginBottom: '1rem' }}>
@@ -68,7 +68,7 @@ const Landing = ({ onNavigate, progress }: LandingProps) => {
           </a>
         </footer>
       </div>
-      <img src="/birdie_bk1.png" alt="Birds" className="landing-image" />
+      <img src="/love birds.png" alt="Love birds" className="landing-image" />
 
       {showProModal && (
         <ProInviteModal
