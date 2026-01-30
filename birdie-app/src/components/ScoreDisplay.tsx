@@ -1,7 +1,7 @@
 import { useMemo, useEffect, useState } from 'react';
 import confetti from 'canvas-confetti';
 import type { Bird, GameSet, UserProgress, Screen } from '../types';
-import { getRandomFacts } from '../utils/gameLogic';
+import { getRandomFacts, getValentinesFacts } from '../utils/gameLogic';
 import { useCountUp } from '../hooks/useCountUp';
 import ShareModal from './ShareModal';
 import { getActiveValentineEvent } from '../config/events';
@@ -18,6 +18,7 @@ const ScoreDisplay = ({ sets, score, progress, onNavigate }: ScoreDisplayProps) 
   const totalBirds = sets.reduce((acc, set) => acc + set.birds.length, 0);
   const allBirds = useMemo(() => sets.flatMap((set) => set.birds), [sets]);
   const randomFacts = useMemo(() => getRandomFacts(allBirds, 3), [allBirds]);
+  const valentinesFacts = useMemo(() => getValentinesFacts(sets, 3), [sets]);
   const animatedScore = useCountUp(score, 1500);
   const valentineEvent = getActiveValentineEvent();
 
@@ -156,12 +157,26 @@ const ScoreDisplay = ({ sets, score, progress, onNavigate }: ScoreDisplayProps) 
         </div>
 
         <div className="fun-facts">
-          <h3>Did you know?</h3>
-          {randomFacts.map((item, idx) => (
-            <div key={idx} className="fact-item">
-              <strong>{item.bird.name}:</strong> {item.fact}
-            </div>
-          ))}
+          <h3>{valentineEvent ? '💕 Love Notes' : 'Did you know?'}</h3>
+          {valentineEvent ? (
+            valentinesFacts.length > 0 ? (
+              valentinesFacts.map((item, idx) => (
+                <div key={idx} className={`fact-item ${valentineEvent ? 'valentine-fact' : ''}`}>
+                  <strong>{item.bird.name}:</strong> {item.fact}
+                </div>
+              ))
+            ) : (
+              <div className="fact-item">
+                Great job identifying those birds! Learn more about their love stories by playing again.
+              </div>
+            )
+          ) : (
+            randomFacts.map((item, idx) => (
+              <div key={idx} className="fact-item">
+                <strong>{item.bird.name}:</strong> {item.fact}
+              </div>
+            ))
+          )}
         </div>
 
         <div className="score-actions">

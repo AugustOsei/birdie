@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import confetti from 'canvas-confetti';
 import type { GameSet, BirdOption } from '../types';
 import { audioManager } from '../utils/audio';
@@ -28,6 +28,21 @@ const Game = ({
   const [animatingHearts, setAnimatingHearts] = useState<Heart[]>([]);
   const set = sets[currentSet];
   const valentineEvent = getActiveValentineEvent();
+
+  // Get Valentine's fact from a random correct bird in this set
+  const valentineFactForRound = useMemo(() => {
+    if (!set.revealed || !valentineEvent) return null;
+
+    const correctBirds = set.birds.filter((bird) => {
+      const userAnswer = set.userAnswers.get(bird.id);
+      return userAnswer === bird.name && bird.valentinesFact;
+    });
+
+    if (correctBirds.length === 0) return null;
+
+    const randomBird = correctBirds[Math.floor(Math.random() * correctBirds.length)];
+    return { bird: randomBird, fact: randomBird.valentinesFact };
+  }, [set.revealed, set.birds, set.userAnswers, valentineEvent]);
 
   // Assign random fly-away animations to each bird
   useEffect(() => {
@@ -249,6 +264,13 @@ const Game = ({
           </>
         ) : (
           <>
+            {valentineFactForRound && valentineEvent && (
+              <div className="between-rounds-valentine">
+                <div className="valentine-heart-icon">💕</div>
+                <h3>{valentineFactForRound.bird.name}</h3>
+                <p>{valentineFactForRound.fact}</p>
+              </div>
+            )}
             <button className="next-button" onClick={onNext}>
               {currentSet < sets.length - 1 ? 'NEXT SET' : 'SEE RESULTS'}
             </button>

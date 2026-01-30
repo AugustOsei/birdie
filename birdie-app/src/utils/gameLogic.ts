@@ -88,3 +88,26 @@ export const getRandomFacts = (birds: Bird[], count: number = 3): { bird: Bird; 
 export const generateShareText = (score: number, total: number, streak: number): string => {
   return `I got ${score}/${total} birds correct in Birdie! ${streak > 1 ? `Day ${streak} streak!` : ''}\n\nCan you beat my score? Play now at [your-url]`;
 };
+
+export const getValentinesFacts = (sets: GameSet[], count: number = 3): { bird: Bird; fact: string }[] => {
+  const correctBirds: Bird[] = [];
+
+  sets.forEach((set) => {
+    set.birds.forEach((bird) => {
+      const userAnswer = set.userAnswers.get(bird.id);
+      if (userAnswer === bird.name && bird.valentinesFact) {
+        correctBirds.push(bird);
+      }
+    });
+  });
+
+  if (correctBirds.length === 0) {
+    return [];
+  }
+
+  const shuffledBirds = shuffleArray(correctBirds).slice(0, count);
+  return shuffledBirds.map((bird) => ({
+    bird,
+    fact: bird.valentinesFact || '',
+  }));
+};

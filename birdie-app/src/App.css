@@ -2069,3 +2069,70 @@ body {
   font-size: 1.1rem;
   color: #666;
 }
+
+/* Between-rounds Valentine fact display */
+.between-rounds-valentine {
+  background: linear-gradient(135deg, #FFB6D9 0%, #FFC0D9 100%);
+  border: 2px solid #FF69B4;
+  border-radius: 20px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  text-align: center;
+  animation: slideIn 0.5s ease-out;
+  box-shadow: 0 4px 15px rgba(255, 105, 180, 0.2);
+}
+
+.between-rounds-valentine .valentine-heart-icon {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  animation: heartBeat 1.2s ease-in-out infinite;
+}
+
+.between-rounds-valentine h3 {
+  color: #C2185B;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.between-rounds-valentine p {
+  color: #880E4F;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heartBeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1);
+  }
+}
+
+/* Valentine fact item styling */
+.fact-item.valentine-fact {
+  background: linear-gradient(to right, #FFE4E1 0%, #FFDAB9 100%);
+  border-left: 4px solid #FF69B4;
+  padding: 1rem;
+  border-radius: 8px;
+  color: #8B1538;
+}
+
+.fact-item.valentine-fact strong {
+  color: #C2185B;
+}

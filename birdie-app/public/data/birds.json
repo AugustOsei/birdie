@@ -9,7 +9,8 @@
         "American Robins are one of the first signs of spring and are known for their distinctive red-orange breast.",
         "They can eat up to 14 feet of earthworms in a single day!",
         "Robin eggs are famously blue, a color called 'robin egg blue.'"
-      ]
+      ],
+      "valentinesFact": "American Robins are devoted parents, working together to feed and protect their young through every season."
     },
     {
       "id": 2,
@@ -20,7 +21,8 @@
         "Blue Jays are highly intelligent birds and can recognize individual humans.",
         "They're excellent mimics and can imitate hawk calls to scare other birds away from feeders.",
         "Blue Jays can carry acorns up to 150 miles away and bury them, helping oak trees spread."
-      ]
+      ],
+      "valentinesFact": "Blue Jays mate for life and share the responsibility of raising their young together."
     },
     {
       "id": 3,
@@ -31,7 +33,8 @@
         "Cardinals are one of the few bird species where both males and females sing.",
         "The bright red male cardinals are more recognizable, but females are actually tan with reddish accents.",
         "They mate for life and can raise up to three broods in a single breeding season."
-      ]
+      ],
+      "valentinesFact": "Cardinals mate for life and can be seen feeding each other during courtship."
     },
     {
       "id": 4,
@@ -42,7 +45,8 @@
         "Chickadees get their name from their distinctive 'chick-a-dee-dee-dee' call.",
         "They have the ability to lower their body temperature at night to conserve energy.",
         "Chickadees can remember thousands of hiding spots where they've cached seeds."
-      ]
+      ],
+      "valentinesFact": "Chickadees are monogamous and pairs often stay together for multiple breeding seasons."
     },
     {
       "id": 5,
@@ -53,7 +57,8 @@
         "House Sparrows are found on every continent except Antarctica and are one of the most widespread bird species.",
         "They're highly social and often gather in groups called 'charms' or 'quarrels.'",
         "Male sparrows have a black bib that gets larger during breeding season to show dominance."
-      ]
+      ],
+      "valentinesFact": "Sparrows are highly social birds that nest close together, enjoying community bonds."
     },
     {
       "id": 6,
@@ -64,7 +69,8 @@
         "Crows are among the most intelligent birds and can solve complex puzzles.",
         "They can recognize individual human faces and remember people who have treated them poorly.",
         "Crows hold 'funerals' for dead crows and can hold grudges for years."
-      ]
+      ],
+      "valentinesFact": "Crows form strong lifelong partnerships with their mates and raise families together."
     },
     {
       "id": 7,
@@ -75,7 +81,8 @@
         "Pigeons can navigate using the Earth's magnetic field and have an incredible homing ability.",
         "They were used as messengers in both World Wars and saved thousands of lives.",
         "Pigeons can see ultraviolet light, which helps them find food and recognize other pigeons."
-      ]
+      ],
+      "valentinesFact": "Pigeons are among the most devoted partners in the bird world, bonding immediately and for life."
     },
     {
       "id": 8,
@@ -86,7 +93,8 @@
         "Seagulls are highly adaptable birds that can drink both fresh and saltwater.",
         "They're excellent problem-solvers and have learned to open chip bags and other food containers.",
         "Seagulls communicate with each other using a complex system of calls and body language."
-      ]
+      ],
+      "valentinesFact": "Seagulls often return to the same nesting sites each year to reunite with their partners."
     },
     {
       "id": 9,
@@ -97,7 +105,8 @@
         "Woodpeckers can peck up to 20 times per second without getting a headache thanks to special shock-absorbing tissues.",
         "Their tongues are extremely long (sometimes longer than their heads) and coiled inside their skulls.",
         "Woodpeckers don't sing; instead, they 'drum' on wood to communicate and establish territory."
-      ]
+      ],
+      "valentinesFact": "Woodpeckers carve nesting cavities together and work as a team to raise their chicks."
     },
     {
       "id": 10,
@@ -108,7 +117,8 @@
         "Owls can rotate their heads up to 270 degrees, giving them nearly complete vision around them.",
         "They have asymmetrical ears that help them locate prey by sound alone.",
         "Most owl species are nocturnal hunters with eyesight that is about 100 times better than humans in low light."
-      ]
+      ],
+      "valentinesFact": "Owl pairs hoot to each other throughout the night in a beautiful duet of love."
     },
     {
       "id": 11,
@@ -119,7 +129,8 @@
         "Male Scarlet Tanagers are brilliant red with black wings, while females are yellow-green.",
         "They migrate between South America and North America, traveling thousands of miles each year.",
         "Scarlet Tanagers are insectivores and help control mosquito and other pest populations."
-      ]
+      ],
+      "valentinesFact": "Scarlet Tanagers perform beautiful songs to woo their mates during courtship season."
     },
     {
       "id": 12,
@@ -130,7 +141,8 @@
         "American Goldfinches are the only finches that molt twice a year, changing colors dramatically.",
         "In winter, they lose their bright yellow plumage and become a dull olive color.",
         "Goldfinches have a special diet preference for thistle seeds and are attracted to nyjer feeders."
-      ]
+      ],
+      "valentinesFact": "Goldfinches form long-lasting pair bonds and often nest near each other in communities."
     },
     {
       "id": 13,
@@ -141,7 +153,8 @@
         "Eastern Bluebirds are cavity nesters and rely on nest boxes for breeding.",
         "They were nearly driven to extinction but have made an amazing comeback thanks to conservation efforts.",
         "Bluebirds are famous in folklore and are often considered symbols of happiness and hope."
-      ]
+      ],
+      "valentinesFact": "Bluebirds are tender partners that work together to build their nests and raise broods."
     },
     {
       "id": 14,
@@ -152,7 +165,8 @@
         "Hummingbirds are the only birds that can fly backwards and hover in mid-air.",
         "Their wings beat up to 80 times per second, which creates the humming sound.",
         "A hummingbird's heart can beat up to 1,260 times per minute, and they must eat every 10-15 minutes to survive."
-      ]
+      ],
+      "valentinesFact": "Hummingbirds engage in spectacular aerial dances to attract their romantic interests."
     },
     {
       "id": 15,
@@ -163,7 +177,8 @@
         "Kingfishers are expert hunters that can dive at speeds up to 25 mph to catch fish.",
         "They have special adaptations in their eyes that let them see fish underwater without distortion.",
         "Kingfishers nest in burrows they dig into riverbanks, creating tunnels up to 4 feet long."
-      ]
+      ],
+      "valentinesFact": "Kingfishers tunnel together into riverbanks to create shared homes for their families."
     },
     {
       "id": 16,
@@ -174,7 +189,8 @@
         "Toucans have massive, colorful beaks that can be up to one-third the length of their entire body.",
         "Despite their size, toucan beaks are surprisingly light because they're mostly hollow.",
         "Toucans use their beaks to regulate body temperature by controlling blood flow to the beak."
-      ]
+      ],
+      "valentinesFact": "Toucans are known for their playful interactions and strong bond between mates."
     },
     {
       "id": 17,
@@ -185,7 +201,8 @@
         "Macaws are one of the most intelligent bird species and can live 50+ years in the wild.",
         "They mate for life and are often seen flying in pairs or small flocks.",
         "Macaws can eat seeds and nuts that are toxic to other animals because their digestive systems are specially adapted."
-      ]
+      ],
+      "valentinesFact": "Macaws are legendary for their lifelong partnerships and are often seen flying together."
     },
     {
       "id": 18,
@@ -196,7 +213,8 @@
         "Sunbirds are tiny, jewel-like birds found in Africa, Asia, and Australia with iridescent plumage.",
         "They have long curved beaks perfectly adapted for drinking nectar from flowers.",
         "Sunbirds are often called 'African hummingbirds' because they fill a similar ecological niche."
-      ]
+      ],
+      "valentinesFact": "Sunbirds perform intricate courtship dances to impress their chosen mates."
     },
     {
       "id": 19,
@@ -207,7 +225,8 @@
         "Bee-eaters are colorful birds that specialize in catching flying insects, including bees and wasps.",
         "They can catch and eat hundreds of bees per day and are immune to most bee stings.",
         "Bee-eaters are migratory birds and are known for their acrobatic flying displays."
-      ]
+      ],
+      "valentinesFact": "Bee-eaters nest in colonies and raise their young in a supportive community."
     },
     {
       "id": 20,
@@ -218,7 +237,8 @@
         "Rollers get their name from their spectacular rolling and tumbling courtship displays in the air.",
         "They have vibrant blue and green plumage and are found across Europe, Africa, and Asia.",
         "Rollers are skilled hunters that catch insects and small lizards in mid-flight."
-      ]
+      ],
+      "valentinesFact": "Rollers perform spectacular rolling aerial displays to impress and court their mates."
     },
     {
       "id": 21,
@@ -229,7 +249,8 @@
         "Puffins have colorful beaks that brighten during breeding season and fade in winter.",
         "They can hold multiple small fish in their beaks at once, sometimes up to 10 fish!",
         "Puffins are excellent swimmers and use their wings to 'fly' underwater to catch fish."
-      ]
+      ],
+      "valentinesFact": "Puffins show incredible loyalty, returning to the same burrow with the same mate each year."
     },
     {
       "id": 22,
@@ -240,7 +261,8 @@
         "Kiwis are flightless birds native to New Zealand and are the national bird of the country.",
         "They have nostrils at the tip of their beaks, unique among birds, which helps them smell food in the ground.",
         "Kiwi eggs are enormous relative to body size\u2014a kiwi egg can be up to 20% of the female's body weight!"
-      ]
+      ],
+      "valentinesFact": "Kiwis are monogamous birds that spend years together caring for their young."
     },
     {
       "id": 23,
@@ -251,7 +273,8 @@
         "Secretary Birds are unique raptors that hunt on the ground instead of from the air, walking up to 20 miles per day.",
         "They stomp on prey with feet that can deliver kicks with over 500 pounds of force.",
         "Secretary Birds got their name from the quill-like feathers on their heads that resemble quills secretaries once tucked behind their ears."
-      ]
+      ],
+      "valentinesFact": "Secretary Birds dance gracefully with their partners in elaborate courtship rituals."
     },
     {
       "id": 24,
@@ -262,7 +285,8 @@
         "Hoopoes have a spectacular crest of feathers on their heads that they raise when alarmed or excited.",
         "They have long, slightly curved beaks that they use to probe into the ground for insects.",
         "Hoopoes are found across Europe, Asia, and Africa and are featured in folklore and ancient texts."
-      ]
+      ],
+      "valentinesFact": "Hoopoes communicate with their mates using distinctive calls and head movements."
     },
     {
       "id": 25,
@@ -273,7 +297,8 @@
         "Lyrebirds are famous for their incredible mimicry abilities and can perfectly imitate other bird calls and even mechanical sounds.",
         "They've been recorded imitating chainsaws, car alarms, camera shutters, and other human-made sounds.",
         "Male lyrebirds have elaborate tail feathers shaped like a lyre, which they display during courtship dances."
-      ]
+      ],
+      "valentinesFact": "Lyrebirds captivate potential mates with elaborate musical performances of remarkable skill."
     },
     {
       "id": 26,
@@ -284,7 +309,8 @@
         "Waxwings get their name from the waxy red tips on their wing feathers that resemble sealing wax.",
         "They have a distinctive black mask across their eyes and a sharp crest on their heads.",
         "Waxwings are highly social and travel in large flocks, sometimes in the hundreds."
-      ]
+      ],
+      "valentinesFact": "Waxwings travel and gather food together as couples, sharing the bounty with their families."
     },
     {
       "id": 27,
@@ -295,7 +321,8 @@
         "Nuthatches are unique birds that can walk headfirst down tree trunks, something most birds cannot do.",
         "They get their name from their habit of wedging nuts into tree bark and 'hatching' them open with their beaks.",
         "Nuthatches are acrobatic climbers and can rotate their feet 180 degrees to grip trees at different angles."
-      ]
+      ],
+      "valentinesFact": "Nuthatches work as devoted teams, defending their nesting territories together all year."
     },
     {
       "id": 28,
@@ -306,7 +333,8 @@
         "Cormorants are excellent swimmers with eyes specially adapted for underwater vision.",
         "Unlike most water birds, cormorants have wettable feathers that absorb water, allowing them to dive deeper.",
         "Cormorants can hold their breath for over a minute while diving in search of fish."
-      ]
+      ],
+      "valentinesFact": "Cormorants nest in large colonies, strengthening bonds with their partners through shared parenting."
     },
     {
       "id": 29,
@@ -317,7 +345,8 @@
         "Male grouse perform elaborate courtship displays called 'leks' to attract females.",
         "Grouse have developed special features on their feet to walk on snow, similar to snowshoes.",
         "The ruffed grouse can produce a sound like distant thunder by beating its wings rapidly."
-      ]
+      ],
+      "valentinesFact": "Grouse perform dramatic courtship displays to win the hearts of their chosen mates."
     },
     {
       "id": 30,
@@ -328,7 +357,8 @@
         "Great Blue Herons stand perfectly still for hours waiting to spear fish with their sharp bills.",
         "Herons have developed special vertebrae in their necks that allow for incredibly fast striking movements.",
         "A single Great Blue Heron can consume up to a pound of fish per day."
-      ]
+      ],
+      "valentinesFact": "Herons stand gracefully together, sharing meals and raising young in peaceful partnerships."
     },
     {
       "id": 31,
@@ -339,7 +369,8 @@
         "Kestrels are the smallest falcons in the world and incredibly acrobatic fliers.",
         "Kestrels can hover in place by facing into the wind and beating their wings rapidly.",
         "These tiny raptors have excellent color vision and can see ultraviolet light to track rodent urine trails."
-      ]
+      ],
+      "valentinesFact": "Kestrels are small but mighty partners, hunting and raising families side by side."
     },
     {
       "id": 32,
@@ -350,7 +381,8 @@
         "Male pheasants can have tails up to two feet long, which they use in dramatic mating displays.",
         "Pheasants originated in Asia and were introduced to Europe and North America for hunting.",
         "A pheasant's loud 'kork-kork' call can be heard from a quarter-mile away across open fields."
-      ]
+      ],
+      "valentinesFact": "Pheasants court with elaborate displays of their magnificent plumage."
     },
     {
       "id": 33,
@@ -361,7 +393,8 @@
         "Bitterns are masters of camouflage, with plumage that perfectly matches marsh vegetation.",
         "Male bitterns produce a unique booming call that sounds like a distant foghorn.",
         "Bitterns have eyes positioned high on their heads allowing them to see while remaining concealed in reeds."
-      ]
+      ],
+      "valentinesFact": "Bitterns call to each other from the reeds with deep, booming love songs."
     },
     {
       "id": 34,
@@ -372,7 +405,8 @@
         "Male mallard ducks display brilliant iridescent green heads, but females are camouflaged in brown plumage.",
         "Ducks are dabbling ducks that feed by tipping forward to reach aquatic plants just below the water surface.",
         "A duck's quack doesn't echo, and scientists still debate why this acoustic phenomenon occurs."
-      ]
+      ],
+      "valentinesFact": "Ducks form seasonal pair bonds and work together to protect their ducklings."
     },
     {
       "id": 35,
@@ -383,7 +417,8 @@
         "Bald eagles can see fish in water from heights of over 10,000 feet in the air.",
         "An eagle's grip strength is approximately ten times stronger than a human hand's grip.",
         "Baby eagles stay in their nest for about 12 weeks before they're ready to fledge."
-      ]
+      ],
+      "valentinesFact": "Eagles mate for life and build increasingly impressive nests together year after year."
     },
     {
       "id": 36,
@@ -394,7 +429,8 @@
         "During breeding season, egrets grow beautiful plume feathers that were once used to decorate hats.",
         "Egrets use their yellow feet to stir up mud and flush out hidden fish from the water.",
         "Great egrets have expanded their range northward in recent decades due to climate change."
-      ]
+      ],
+      "valentinesFact": "Egrets gather in breeding colonies to celebrate courtship and raise their young."
     },
     {
       "id": 37,
@@ -405,7 +441,8 @@
         "Flamingos get their pink color from their diet, which is rich in carotenoid pigments from algae.",
         "Flamingos filter food from water using specialized beaks that work upside down while feeding.",
         "Baby flamingos are born with gray feathers and don't develop their distinctive pink coloring until later."
-      ]
+      ],
+      "valentinesFact": "Flamingos dance together in synchronized groups, bonding with their lifelong partners."
     },
     {
       "id": 38,
@@ -416,7 +453,8 @@
         "Geese form strong pair bonds and often mate for life, staying together year after year.",
         "Geese fly in a V-formation to reduce wind resistance, taking turns at the front position.",
         "Canada geese can fly at speeds of up to 40 miles per hour during their annual migrations."
-      ]
+      ],
+      "valentinesFact": "Geese are the ultimate lovers of the bird world, mating for life and raising families together."
     },
     {
       "id": 39,
@@ -427,7 +465,8 @@
         "Red-tailed hawks are the most common hawk in North America and can live over 20 years in the wild.",
         "Hawks have excellent binocular vision that allows them to spot prey from great distances.",
         "A hawk's wings are highly maneuverable, allowing rapid turns through dense forest vegetation."
-      ]
+      ],
+      "valentinesFact": "Hawks soar together through the skies, defending their territories as devoted couples."
     },
     {
       "id": 40,
@@ -438,7 +477,8 @@
         "Common loons can dive up to 200 feet deep and hold their breath for several minutes.",
         "Loons produce eerie wailing calls that are often associated with northern wilderness lakes.",
         "A loon's legs are positioned so far back on their body that they can barely walk on land."
-      ]
+      ],
+      "valentinesFact": "Loons perform haunting duets with their mates, their calls echoing across pristine lakes."
     },
     {
       "id": 41,
@@ -449,7 +489,8 @@
         "Ospreys are the only hawk that can close their nostrils to keep water out while diving.",
         "An osprey's outer toes are reversible, allowing them to grip fish with all four toes forward.",
         "Ospreys migrate up to 160,000 kilometers annually, the longest migration of any bird."
-      ]
+      ],
+      "valentinesFact": "Ospreys return to the same nest year after year with their faithful partners."
     },
     {
       "id": 42,
@@ -460,7 +501,8 @@
         "A male peacock's tail contains over 200 feathers in its stunning fan display.",
         "Peacocks produce loud honking calls that can be heard nearly a mile away.",
         "Each of a peacock's tail feathers has between 200-300 individual barbs for waterproofing."
-      ]
+      ],
+      "valentinesFact": "Peacocks put on spectacular shows, but find true love in lasting partnerships with their mates."
     },
     {
       "id": 43,
@@ -471,7 +513,8 @@
         "Ravens are among the most intelligent bird species and can solve complex multi-step puzzles.",
         "Ravens can remember human faces and hold grudges against people who have mistreated them.",
         "A group of ravens is called an 'unkindness', reflecting their playful and mischievous nature."
-      ]
+      ],
+      "valentinesFact": "Ravens are intelligent lovers that play and bond with their mates throughout their lives."
     },
     {
       "id": 44,
@@ -482,7 +525,8 @@
         "Storks don't have vocal cords, so they communicate by clattering their large bills together.",
         "White storks migrate from Africa to Europe and back annually, traveling over 10,000 miles.",
         "Stork couples build enormous stick nests that can weigh up to half a ton and last for decades."
-      ]
+      ],
+      "valentinesFact": "Storks clatter their bills together in joyful duets and build lasting partnerships."
     },
     {
       "id": 45,
@@ -493,7 +537,8 @@
         "Swans are among the heaviest flying birds, weighing up to 30 pounds or more.",
         "Mute swans produce a loud whooshing sound with their wings in flight.",
         "Young swans called 'cygnets' can live with their parents for up to a year after hatching."
-      ]
+      ],
+      "valentinesFact": "Swans are icons of love, gliding gracefully together and raising families in devoted partnerships."
     },
     {
       "id": 46,
@@ -504,7 +549,8 @@
         "Male turkeys fan their tails in a spectacular display containing 18 feathers.",
         "Turkeys have exceptional color vision and can see in three dimensions.",
         "Wild turkeys can run up to 25 miles per hour and fly short distances at 55 miles per hour."
-      ]
+      ],
+      "valentinesFact": "Turkeys strut for their mates in magnificent displays of devotion and commitment."
     },
     {
       "id": 47,
@@ -515,7 +561,8 @@
         "Vultures can soar for hours on thermal updrafts without flapping their wings.",
         "A vulture's stomach acid is strong enough to dissolve bone, making them nature's cleanup crew.",
         "Vultures urinate on their legs to cool themselves, a process called 'urohydrosis'."
-      ]
+      ],
+      "valentinesFact": "Vultures soar together through the skies, maintaining strong bonds with their lifelong mates."
     }
   ]
 }

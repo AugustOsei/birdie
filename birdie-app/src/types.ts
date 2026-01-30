@@ -4,6 +4,7 @@ export interface Bird {
   scientificName: string;
   image: string;
   facts: string[];
+  valentinesFact?: string;
 }
 
 export interface BirdOption {
