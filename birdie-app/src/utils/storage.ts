@@ -18,6 +18,12 @@ export const getDefaultProgress = (): UserProgress => ({
   valentine: {
     heartsCollected: 0,
   },
+  loveBirds: {
+    lastAttempt: null,
+    bestScore: 0,
+    totalAttempts: 0,
+    perfectScores: 0,
+  },
 });
 
 export const loadProgress = (): UserProgress => {
@@ -34,6 +40,16 @@ export const loadProgress = (): UserProgress => {
         totalGamesPlayed: parsed.totalGamesPlayed || 0,
         history: parsed.history || [],
         muteSounds: parsed.muteSounds || false,
+      };
+    }
+
+    // Migration: add loveBirds if missing
+    if (!parsed.loveBirds) {
+      parsed.loveBirds = {
+        lastAttempt: null,
+        bestScore: 0,
+        totalAttempts: 0,
+        perfectScores: 0,
       };
     }
 
@@ -173,4 +189,23 @@ export const addHearts = (
  */
 export const getHeartsCollected = (progress: UserProgress): number => {
   return progress.valentine.heartsCollected;
+};
+
+/**
+ * Update Love Birds Challenge score
+ */
+export const updateLoveBirdsScore = (
+  progress: UserProgress,
+  score: number,
+  isPerfect: boolean
+): UserProgress => {
+  return {
+    ...progress,
+    loveBirds: {
+      lastAttempt: new Date().toISOString(),
+      bestScore: Math.max(progress.loveBirds.bestScore, score),
+      totalAttempts: progress.loveBirds.totalAttempts + 1,
+      perfectScores: progress.loveBirds.perfectScores + (isPerfect ? 1 : 0),
+    },
+  };
 };

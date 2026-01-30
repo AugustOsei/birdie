@@ -2136,3 +2136,314 @@ body {
 .fact-item.valentine-fact strong {
   color: #C2185B;
 }
+
+/* ========== LOVE BIRDS CHALLENGE ========== */
+
+/* Love Birds button on landing page */
+.love-birds-button {
+  background: linear-gradient(135deg, #FF69B4 0%, #FF1493 100%);
+  color: white;
+  border: none;
+  padding: 1.5rem 2rem;
+  border-radius: 15px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  max-width: 400px;
+}
+
+.love-birds-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 105, 180, 0.4);
+}
+
+.love-birds-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.love-birds-button .button-icon {
+  font-size: 2rem;
+}
+
+.love-birds-button .button-text {
+  text-align: left;
+}
+
+.love-birds-button small {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 400;
+  margin-top: 0.3rem;
+  opacity: 0.9;
+}
+
+/* Love Birds game container */
+.love-birds-game {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.love-birds-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.love-birds-header h1 {
+  color: #C2185B;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.love-birds-progress {
+  color: #880E4F;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+/* Question display */
+.love-birds-question {
+  background: linear-gradient(135deg, #FFE4E1 0%, #FFC0CB 100%);
+  border-radius: 20px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.love-birds-question h2 {
+  color: #C2185B;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.birds-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.bird-option {
+  background: white;
+  border-radius: 15px;
+  padding: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 3px solid transparent;
+}
+
+.bird-option:hover:not(.selected):not(.disabled) {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.bird-option.selected.correct {
+  border-color: #4CAF50;
+  background: #E8F5E9;
+}
+
+.bird-option.selected.incorrect {
+  border-color: #F44336;
+  background: #FFEBEE;
+}
+
+.bird-option.disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.bird-option img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+}
+
+.bird-option-name {
+  text-align: center;
+  font-weight: 600;
+  color: #333;
+  margin-top: 0.5rem;
+}
+
+.feedback-icon {
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+/* Results screen */
+.love-birds-results {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.love-birds-score-card {
+  background: linear-gradient(135deg, #FFB6D9 0%, #FFC0D9 100%);
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.love-birds-score-card h2 {
+  color: #C2185B;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.love-birds-final-score {
+  font-size: 3rem;
+  color: #880E4F;
+  font-weight: 700;
+  margin: 1rem 0;
+}
+
+.love-birds-score-text {
+  color: #8B1538;
+  font-size: 1.1rem;
+}
+
+.badge-celebration {
+  margin: 1rem 0;
+  opacity: 0;
+}
+
+.badge-celebration.show {
+  animation: badgePulse 0.8s ease-out forwards;
+}
+
+@keyframes badgePulse {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.badge-earned {
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  color: #8B4513;
+  padding: 1rem;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+.love-birds-stats {
+  margin: 1rem 0;
+  color: #8B1538;
+  font-size: 0.95rem;
+}
+
+.love-birds-breakdown {
+  background: #FFF;
+  border-radius: 15px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.love-birds-breakdown h3 {
+  color: #C2185B;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.questions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.question-result {
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+  border: 2px solid transparent;
+}
+
+.question-result.correct {
+  background: #E8F5E9;
+  border-color: #4CAF50;
+}
+
+.question-result.incorrect {
+  background: #FFEBEE;
+  border-color: #F44336;
+}
+
+.result-number {
+  font-weight: 700;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.result-bird-image {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.result-name {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.3rem;
+}
+
+.result-status {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.love-birds-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .birds-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .love-birds-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .love-birds-final-score {
+    font-size: 2rem;
+  }
+
+  .questions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .love-birds-button {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .love-birds-button .button-text {
+    text-align: center;
+  }
+}

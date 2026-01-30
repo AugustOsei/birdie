@@ -56,6 +56,29 @@ export interface ValentineStats {
   heartsCollected: number; // Total hearts collected during Valentine's event
 }
 
+export interface LoveBirdsQuestion {
+  questionNumber: number;
+  correctBird: Bird; // The Love Bird (correct answer)
+  wrongBirds: Bird[]; // 2 Non-Love Birds (wrong answers)
+  options: Bird[]; // All 3 shuffled together
+  userAnswer: number | null; // Bird ID selected by user
+  isCorrect: boolean | null; // Null if not answered yet
+}
+
+export interface LoveBirdsGameState {
+  questions: LoveBirdsQuestion[];
+  currentQuestion: number;
+  score: number;
+  completed: boolean;
+}
+
+export interface LoveBirdsStats {
+  lastAttempt: string | null;
+  bestScore: number;
+  totalAttempts: number;
+  perfectScores: number;
+}
+
 export interface UserProgress {
   totalGamesPlayed: number;
   history: GameHistory[];
@@ -65,6 +88,7 @@ export interface UserProgress {
   allTimePerfectScores: number;
   birdiePro: BirdieProStats;
   valentine: ValentineStats;
+  loveBirds: LoveBirdsStats;
 }
 
-export type Screen = 'landing' | 'game' | 'score' | 'about-game' | 'about-us' | 'badges' | 'birdie-pro' | 'birdie-pro-score';
+export type Screen = 'landing' | 'game' | 'score' | 'about-game' | 'about-us' | 'badges' | 'birdie-pro' | 'birdie-pro-score' | 'love-birds' | 'love-birds-score';

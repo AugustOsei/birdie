@@ -46,15 +46,18 @@ export const AVAILABLE_BADGES: Omit<Badge, 'earnedDate'>[] = [
     icon: '💎',
     requirement: '10 perfect scores (total)',
   },
+  {
+    id: 'love-birds',
+    name: 'Love Birds',
+    description: 'Achieved a perfect score in Love Birds Challenge',
+    icon: '💕',
+    requirement: 'Get 14/14 correct in Love Birds Challenge',
+  },
 ];
 
 export const checkBadgeEarned = (
   badgeId: string,
-  progress: {
-    consecutivePerfectScores: number;
-    totalGamesPlayed: number;
-    allTimePerfectScores: number;
-  }
+  progress: any
 ): boolean => {
   switch (badgeId) {
     case 'level-1-birder':
@@ -69,6 +72,8 @@ export const checkBadgeEarned = (
       return progress.totalGamesPlayed >= 50;
     case 'perfectionist':
       return progress.allTimePerfectScores >= 10;
+    case 'love-birds':
+      return progress.loveBirds?.perfectScores > 0;
     default:
       return false;
   }

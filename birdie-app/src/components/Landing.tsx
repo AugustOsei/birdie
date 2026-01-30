@@ -50,6 +50,16 @@ const Landing = ({ onNavigate, progress }: LandingProps) => {
           >
             START PLAYING
           </button>
+          <button
+            className="love-birds-button"
+            onClick={() => onNavigate('love-birds')}
+          >
+            <span className="button-icon">💕</span>
+            <div className="button-text">
+              <strong>LOVE BIRDS CHALLENGE</strong>
+              <small>Which bird mates for life?</small>
+            </div>
+          </button>
           <button className="secondary-button" onClick={() => onNavigate('badges')}>
             MY BADGES
           </button>

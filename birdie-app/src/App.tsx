@@ -9,7 +9,9 @@ import Modal from './components/Modal';
 import Badges from './components/Badges';
 import BirdieProGame from './components/BirdieProGame';
 import BirdieProResults from './components/BirdieProResults';
-import type { Bird, Screen, GameSet, UserProgress, GameHistory } from './types';
+import LoveBirdsGame from './components/LoveBirdsGame';
+import LoveBirdsResults from './components/LoveBirdsResults';
+import type { Bird, Screen, GameSet, UserProgress, GameHistory, LoveBirdsGameState } from './types';
 import {
   loadProgress,
   saveProgress,
@@ -18,8 +20,10 @@ import {
   getDateString,
   updateBirdieProScore,
   addHearts,
+  updateLoveBirdsScore,
 } from './utils/storage';
 import { generateDailyGame, calculateScore } from './utils/gameLogic';
+import { generateLoveBirdsGame, calculateLoveBirdsScore } from './utils/loveBirdsLogic';
 
 function App() {
   const [screen, setScreen] = useState<Screen>('landing');
@@ -30,6 +34,7 @@ function App() {
   const [allBirds, setAllBirds] = useState<Bird[]>([]);
   const [score, setScore] = useState(0);
   const [proScore, setProScore] = useState(0);
+  const [loveBirdsGameState, setLoveBirdsGameState] = useState<LoveBirdsGameState | null>(null);
   const [_newlyEarnedBadges, setNewlyEarnedBadges] = useState<typeof progress.earnedBadges>([]);
 
   useEffect(() => {
@@ -118,6 +123,56 @@ function App() {
     setScreen('birdie-pro-score');
   };
 
+  const startLoveBirds = () => {
+    if (allBirds.length > 0) {
+      const gameState = generateLoveBirdsGame(allBirds);
+      setLoveBirdsGameState(gameState);
+      setScreen('love-birds');
+    }
+  };
+
+  const handleSelectLoveBird = (questionIndex: number, birdId: number) => {
+    if (!loveBirdsGameState) return;
+
+    const question = loveBirdsGameState.questions[questionIndex];
+    const isCorrect = birdId === question.correctBird.id;
+
+    // Update question with answer
+    const updatedQuestions = [...loveBirdsGameState.questions];
+    updatedQuestions[questionIndex] = {
+      ...question,
+      userAnswer: birdId,
+      isCorrect,
+    };
+
+    const updatedState = {
+      ...loveBirdsGameState,
+      questions: updatedQuestions,
+    };
+
+    // If last question, mark as completed
+    if (questionIndex === 13) {
+      updatedState.completed = true;
+      updatedState.score = calculateLoveBirdsScore(updatedQuestions);
+
+      // Update progress
+      const isPerfect = updatedState.score === 14;
+      const updatedProgress = updateLoveBirdsScore(progress, updatedState.score, isPerfect);
+      setProgress(updatedProgress);
+      saveProgress(updatedProgress);
+
+      // Navigate to results after delay
+      setTimeout(() => {
+        setScreen('love-birds-score');
+      }, 2000);
+    } else {
+      // Auto-advance to next question
+      updatedState.currentQuestion = questionIndex + 1;
+    }
+
+    setLoveBirdsGameState(updatedState);
+  };
+
   const handleNavigate = (newScreen: Screen) => {
     if (newScreen === 'about-game' || newScreen === 'about-us') {
       // Store current screen before opening modal
@@ -131,6 +186,8 @@ function App() {
       startGame();
     } else if (newScreen === 'birdie-pro') {
       startBirdiePro();
+    } else if (newScreen === 'love-birds') {
+      startLoveBirds();
     } else {
       setScreen(newScreen);
     }
@@ -211,6 +268,23 @@ function App() {
             onNavigate={handleNavigate}
           />
         );
+      case 'love-birds':
+        return loveBirdsGameState ? (
+          <LoveBirdsGame
+            gameState={loveBirdsGameState}
+            onSelectBird={handleSelectLoveBird}
+            isMuted={progress.muteSounds}
+          />
+        ) : null;
+      case 'love-birds-score':
+        return loveBirdsGameState ? (
+          <LoveBirdsResults
+            gameState={loveBirdsGameState}
+            progress={progress}
+            onNavigate={handleNavigate}
+            onPlayAgain={startLoveBirds}
+          />
+        ) : null;
       default:
         return (
           <Landing
@@ -228,7 +302,7 @@ function App() {
         onNavigate={handleNavigate}
         onToggleMute={handleToggleMute}
         isMuted={progress.muteSounds}
-        showNav={screen !== 'landing' && screen !== 'birdie-pro' && screen !== 'birdie-pro-score'}
+        showNav={screen !== 'landing' && screen !== 'birdie-pro' && screen !== 'birdie-pro-score' && screen !== 'love-birds' && screen !== 'love-birds-score'}
       />
       {renderScreen()}
       {(screen === 'about-game' || screen === 'about-us') && (
