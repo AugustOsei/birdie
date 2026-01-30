@@ -239,7 +239,7 @@
       "facts": [
         "Kiwis are flightless birds native to New Zealand and are the national bird of the country.",
         "They have nostrils at the tip of their beaks, unique among birds, which helps them smell food in the ground.",
-        "Kiwi eggs are enormous relative to body size—a kiwi egg can be up to 20% of the female's body weight!"
+        "Kiwi eggs are enormous relative to body size\u2014a kiwi egg can be up to 20% of the female's body weight!"
       ]
     },
     {
@@ -295,6 +295,226 @@
         "Nuthatches are unique birds that can walk headfirst down tree trunks, something most birds cannot do.",
         "They get their name from their habit of wedging nuts into tree bark and 'hatching' them open with their beaks.",
         "Nuthatches are acrobatic climbers and can rotate their feet 180 degrees to grip trees at different angles."
+      ]
+    },
+    {
+      "id": 28,
+      "name": "Cormorant",
+      "scientificName": "Phalacrocorax carbo",
+      "image": "/images/cormorant.png",
+      "facts": [
+        "Cormorants are excellent swimmers with eyes specially adapted for underwater vision.",
+        "Unlike most water birds, cormorants have wettable feathers that absorb water, allowing them to dive deeper.",
+        "Cormorants can hold their breath for over a minute while diving in search of fish."
+      ]
+    },
+    {
+      "id": 29,
+      "name": "Grouse",
+      "scientificName": "Tetrao urogallus",
+      "image": "/images/grouse.png",
+      "facts": [
+        "Male grouse perform elaborate courtship displays called 'leks' to attract females.",
+        "Grouse have developed special features on their feet to walk on snow, similar to snowshoes.",
+        "The ruffed grouse can produce a sound like distant thunder by beating its wings rapidly."
+      ]
+    },
+    {
+      "id": 30,
+      "name": "Heron",
+      "scientificName": "Ardea herodias",
+      "image": "/images/heron.png",
+      "facts": [
+        "Great Blue Herons stand perfectly still for hours waiting to spear fish with their sharp bills.",
+        "Herons have developed special vertebrae in their necks that allow for incredibly fast striking movements.",
+        "A single Great Blue Heron can consume up to a pound of fish per day."
+      ]
+    },
+    {
+      "id": 31,
+      "name": "Kestrel",
+      "scientificName": "Falco tinnunculus",
+      "image": "/images/kestrel.png",
+      "facts": [
+        "Kestrels are the smallest falcons in the world and incredibly acrobatic fliers.",
+        "Kestrels can hover in place by facing into the wind and beating their wings rapidly.",
+        "These tiny raptors have excellent color vision and can see ultraviolet light to track rodent urine trails."
+      ]
+    },
+    {
+      "id": 32,
+      "name": "Pheasant",
+      "scientificName": "Phasianus colchicus",
+      "image": "/images/pheasant.png",
+      "facts": [
+        "Male pheasants can have tails up to two feet long, which they use in dramatic mating displays.",
+        "Pheasants originated in Asia and were introduced to Europe and North America for hunting.",
+        "A pheasant's loud 'kork-kork' call can be heard from a quarter-mile away across open fields."
+      ]
+    },
+    {
+      "id": 33,
+      "name": "Bittern",
+      "scientificName": "Botaurus stellaris",
+      "image": "/images/bittern.png",
+      "facts": [
+        "Bitterns are masters of camouflage, with plumage that perfectly matches marsh vegetation.",
+        "Male bitterns produce a unique booming call that sounds like a distant foghorn.",
+        "Bitterns have eyes positioned high on their heads allowing them to see while remaining concealed in reeds."
+      ]
+    },
+    {
+      "id": 34,
+      "name": "Duck",
+      "scientificName": "Anas platyrhynchos",
+      "image": "/images/duck.png",
+      "facts": [
+        "Male mallard ducks display brilliant iridescent green heads, but females are camouflaged in brown plumage.",
+        "Ducks are dabbling ducks that feed by tipping forward to reach aquatic plants just below the water surface.",
+        "A duck's quack doesn't echo, and scientists still debate why this acoustic phenomenon occurs."
+      ]
+    },
+    {
+      "id": 35,
+      "name": "Eagle",
+      "scientificName": "Haliaeetus leucocephalus",
+      "image": "/images/eagle.png",
+      "facts": [
+        "Bald eagles can see fish in water from heights of over 10,000 feet in the air.",
+        "An eagle's grip strength is approximately ten times stronger than a human hand's grip.",
+        "Baby eagles stay in their nest for about 12 weeks before they're ready to fledge."
+      ]
+    },
+    {
+      "id": 36,
+      "name": "Egret",
+      "scientificName": "Egretta garzetta",
+      "image": "/images/egret.png",
+      "facts": [
+        "During breeding season, egrets grow beautiful plume feathers that were once used to decorate hats.",
+        "Egrets use their yellow feet to stir up mud and flush out hidden fish from the water.",
+        "Great egrets have expanded their range northward in recent decades due to climate change."
+      ]
+    },
+    {
+      "id": 37,
+      "name": "Flamingo",
+      "scientificName": "Phoenicopterus ruber",
+      "image": "/images/flamingo.png",
+      "facts": [
+        "Flamingos get their pink color from their diet, which is rich in carotenoid pigments from algae.",
+        "Flamingos filter food from water using specialized beaks that work upside down while feeding.",
+        "Baby flamingos are born with gray feathers and don't develop their distinctive pink coloring until later."
+      ]
+    },
+    {
+      "id": 38,
+      "name": "Goose",
+      "scientificName": "Anser anser",
+      "image": "/images/goose.png",
+      "facts": [
+        "Geese form strong pair bonds and often mate for life, staying together year after year.",
+        "Geese fly in a V-formation to reduce wind resistance, taking turns at the front position.",
+        "Canada geese can fly at speeds of up to 40 miles per hour during their annual migrations."
+      ]
+    },
+    {
+      "id": 39,
+      "name": "Hawk",
+      "scientificName": "Accipiter gentilis",
+      "image": "/images/hawk.png",
+      "facts": [
+        "Red-tailed hawks are the most common hawk in North America and can live over 20 years in the wild.",
+        "Hawks have excellent binocular vision that allows them to spot prey from great distances.",
+        "A hawk's wings are highly maneuverable, allowing rapid turns through dense forest vegetation."
+      ]
+    },
+    {
+      "id": 40,
+      "name": "Loon",
+      "scientificName": "Gavia immer",
+      "image": "/images/loon.png",
+      "facts": [
+        "Common loons can dive up to 200 feet deep and hold their breath for several minutes.",
+        "Loons produce eerie wailing calls that are often associated with northern wilderness lakes.",
+        "A loon's legs are positioned so far back on their body that they can barely walk on land."
+      ]
+    },
+    {
+      "id": 41,
+      "name": "Osprey",
+      "scientificName": "Pandion haliaetus",
+      "image": "/images/osprey.png",
+      "facts": [
+        "Ospreys are the only hawk that can close their nostrils to keep water out while diving.",
+        "An osprey's outer toes are reversible, allowing them to grip fish with all four toes forward.",
+        "Ospreys migrate up to 160,000 kilometers annually, the longest migration of any bird."
+      ]
+    },
+    {
+      "id": 42,
+      "name": "Peacock",
+      "scientificName": "Pavo cristatus",
+      "image": "/images/peacock.png",
+      "facts": [
+        "A male peacock's tail contains over 200 feathers in its stunning fan display.",
+        "Peacocks produce loud honking calls that can be heard nearly a mile away.",
+        "Each of a peacock's tail feathers has between 200-300 individual barbs for waterproofing."
+      ]
+    },
+    {
+      "id": 43,
+      "name": "Raven",
+      "scientificName": "Corvus corax",
+      "image": "/images/raven.png",
+      "facts": [
+        "Ravens are among the most intelligent bird species and can solve complex multi-step puzzles.",
+        "Ravens can remember human faces and hold grudges against people who have mistreated them.",
+        "A group of ravens is called an 'unkindness', reflecting their playful and mischievous nature."
+      ]
+    },
+    {
+      "id": 44,
+      "name": "Stork",
+      "scientificName": "Ciconia ciconia",
+      "image": "/images/stork.png",
+      "facts": [
+        "Storks don't have vocal cords, so they communicate by clattering their large bills together.",
+        "White storks migrate from Africa to Europe and back annually, traveling over 10,000 miles.",
+        "Stork couples build enormous stick nests that can weigh up to half a ton and last for decades."
+      ]
+    },
+    {
+      "id": 45,
+      "name": "Swan",
+      "scientificName": "Cygnus olor",
+      "image": "/images/swan.png",
+      "facts": [
+        "Swans are among the heaviest flying birds, weighing up to 30 pounds or more.",
+        "Mute swans produce a loud whooshing sound with their wings in flight.",
+        "Young swans called 'cygnets' can live with their parents for up to a year after hatching."
+      ]
+    },
+    {
+      "id": 46,
+      "name": "Turkey",
+      "scientificName": "Meleagris gallopavo",
+      "image": "/images/turkey.png",
+      "facts": [
+        "Male turkeys fan their tails in a spectacular display containing 18 feathers.",
+        "Turkeys have exceptional color vision and can see in three dimensions.",
+        "Wild turkeys can run up to 25 miles per hour and fly short distances at 55 miles per hour."
+      ]
+    },
+    {
+      "id": 47,
+      "name": "Vulture",
+      "scientificName": "Gyps fulvus",
+      "image": "/images/vulture.png",
+      "facts": [
+        "Vultures can soar for hours on thermal updrafts without flapping their wings.",
+        "A vulture's stomach acid is strong enough to dissolve bone, making them nature's cleanup crew.",
+        "Vultures urinate on their legs to cool themselves, a process called 'urohydrosis'."
       ]
     }
   ]
