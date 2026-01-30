@@ -111,7 +111,7 @@ const Landing = ({ onNavigate, progress }: LandingProps) => {
         {/* Hero Image */}
         <div className="landing-hero-image-container">
           <motion.img
-            src="/birdland1.png"
+            src="/birdland1.jpeg"
             alt="Love Birds"
             className="landing-hero-image"
             variants={floatVariant}
