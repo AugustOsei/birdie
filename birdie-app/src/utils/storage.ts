@@ -15,6 +15,9 @@ export const getDefaultProgress = (): UserProgress => ({
     bestScore: 0,
     totalAttempts: 0,
   },
+  valentine: {
+    heartsCollected: 0,
+  },
 });
 
 export const loadProgress = (): UserProgress => {
@@ -148,4 +151,26 @@ export const updateBirdieProScore = (
       totalAttempts: progress.birdiePro.totalAttempts + 1,
     },
   };
+};
+
+/**
+ * Add hearts to the user's Valentine's event total
+ */
+export const addHearts = (
+  progress: UserProgress,
+  hearts: number
+): UserProgress => {
+  return {
+    ...progress,
+    valentine: {
+      heartsCollected: progress.valentine.heartsCollected + hearts,
+    },
+  };
+};
+
+/**
+ * Get total hearts collected during Valentine's event
+ */
+export const getHeartsCollected = (progress: UserProgress): number => {
+  return progress.valentine.heartsCollected;
 };

@@ -17,6 +17,7 @@ import {
   toggleMute,
   getDateString,
   updateBirdieProScore,
+  addHearts,
 } from './utils/storage';
 import { generateDailyGame, calculateScore } from './utils/gameLogic';
 
@@ -90,7 +91,11 @@ function App() {
         ),
       };
 
-      const updatedProgress = addGameToHistory(progress, gameHistory, isPerfectScore);
+      let updatedProgress = addGameToHistory(progress, gameHistory, isPerfectScore);
+
+      // Track hearts during Valentine's event
+      updatedProgress = addHearts(updatedProgress, finalScore);
+
       setProgress(updatedProgress);
       saveProgress(updatedProgress);
 

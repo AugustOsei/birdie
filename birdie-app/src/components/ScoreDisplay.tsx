@@ -4,6 +4,7 @@ import type { Bird, GameSet, UserProgress, Screen } from '../types';
 import { getRandomFacts } from '../utils/gameLogic';
 import { useCountUp } from '../hooks/useCountUp';
 import ShareModal from './ShareModal';
+import { getActiveValentineEvent } from '../config/events';
 
 interface ScoreDisplayProps {
   sets: GameSet[];
@@ -18,6 +19,7 @@ const ScoreDisplay = ({ sets, score, progress, onNavigate }: ScoreDisplayProps) 
   const allBirds = useMemo(() => sets.flatMap((set) => set.birds), [sets]);
   const randomFacts = useMemo(() => getRandomFacts(allBirds, 3), [allBirds]);
   const animatedScore = useCountUp(score, 1500);
+  const valentineEvent = getActiveValentineEvent();
 
   const isPerfectScore = score === totalBirds;
 
@@ -81,9 +83,20 @@ const ScoreDisplay = ({ sets, score, progress, onNavigate }: ScoreDisplayProps) 
     <div className="score-display">
       <div className="score-card">
         <h2>{isPerfectScore ? 'Perfect! 🎉' : 'Great Job!'}</h2>
-        <div className="final-score">
-          {animatedScore}/{totalBirds} Birds Correct!
-        </div>
+        {valentineEvent ? (
+          <div className="score-with-hearts">
+            <div className="hearts-count">
+              {animatedScore} ❤️
+            </div>
+            <div className="score-fraction">
+              {animatedScore}/{totalBirds}
+            </div>
+          </div>
+        ) : (
+          <div className="final-score">
+            {animatedScore}/{totalBirds} Birds Correct!
+          </div>
+        )}
 
         {isPerfectScore && progress.consecutivePerfectScores > 0 && (
           <div className="achievement-badges">

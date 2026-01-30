@@ -51,6 +51,10 @@ export interface BirdieProStats {
   totalAttempts: number;
 }
 
+export interface ValentineStats {
+  heartsCollected: number; // Total hearts collected during Valentine's event
+}
+
 export interface UserProgress {
   totalGamesPlayed: number;
   history: GameHistory[];
@@ -59,6 +63,7 @@ export interface UserProgress {
   earnedBadges: Badge[];
   allTimePerfectScores: number;
   birdiePro: BirdieProStats;
+  valentine: ValentineStats;
 }
 
 export type Screen = 'landing' | 'game' | 'score' | 'about-game' | 'about-us' | 'badges' | 'birdie-pro' | 'birdie-pro-score';

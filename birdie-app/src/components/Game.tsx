@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import confetti from 'canvas-confetti';
 import type { GameSet, BirdOption } from '../types';
 import { audioManager } from '../utils/audio';
+import { getActiveValentineEvent } from '../config/events';
+import { generateHearts, type Heart } from '../utils/hearts';
 
 interface GameProps {
   sets: GameSet[];
@@ -23,7 +25,9 @@ const Game = ({
   const [flyingBirds, setFlyingBirds] = useState<Set<number>>(new Set());
   const [birdAnimations, setBirdAnimations] = useState<Map<number, string>>(new Map());
   const [mobileCurrentBird, setMobileCurrentBird] = useState(0);
+  const [animatingHearts, setAnimatingHearts] = useState<Heart[]>([]);
   const set = sets[currentSet];
+  const valentineEvent = getActiveValentineEvent();
 
   // Assign random fly-away animations to each bird
   useEffect(() => {
@@ -92,11 +96,24 @@ const Game = ({
         setTimeout(() => audioManager.playWrong(), 400);
       }
 
-      setTimeout(() => {
-        setFlyingBirds(new Set(correctBirds));
-      }, 100);
+      // Show hearts if Valentine's event is active, otherwise show flying birds
+      if (valentineEvent) {
+        // Generate hearts for each correct bird
+        const hearts = generateHearts(correctBirds.length);
+        setAnimatingHearts(hearts);
+
+        // Clear hearts after animation completes
+        setTimeout(() => {
+          setAnimatingHearts([]);
+        }, 2000);
+      } else {
+        setTimeout(() => {
+          setFlyingBirds(new Set(correctBirds));
+        }, 100);
+      }
     } else {
       setFlyingBirds(new Set());
+      setAnimatingHearts([]);
     }
   }, [set.revealed, set.birds, set.userAnswers]);
 
@@ -123,6 +140,24 @@ const Game = ({
 
   return (
     <div className="game-container">
+      {/* Heart animation overlay for Valentine's event */}
+      {valentineEvent && animatingHearts.length > 0 && (
+        <div className="heart-animation-container">
+          {animatingHearts.map((heart) => (
+            <div
+              key={heart.id}
+              className="floating-heart"
+              style={{
+                left: `${heart.x}%`,
+                top: `${heart.y}%`,
+              }}
+            >
+              ❤️
+            </div>
+          ))}
+        </div>
+      )}
+
       <div className="game-header">
         <h2>Identify the Birds</h2>
         <p className="progress-indicator">
