@@ -581,12 +581,12 @@
   }
 
   .landing-right-column {
-    max-height: 500px;
+    max-height: 700px;
     padding: 1rem;
   }
 
   .landing-hero-image-wrapper {
-    max-width: 380px;
+    max-width: 640px;
   }
 
   .landing-cta {
