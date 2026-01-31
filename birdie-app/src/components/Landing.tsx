@@ -191,7 +191,7 @@ const Landing = ({ onNavigate, progress }: LandingProps) => {
             animate="visible"
           >
             <motion.img
-              src="/birdland2.png"
+              src="/birdland4.png"
               alt="Birdland - Love Birds"
               className="landing-hero-image"
               animate="float"
