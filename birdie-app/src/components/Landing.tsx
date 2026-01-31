@@ -73,16 +73,6 @@ const Landing = ({ onNavigate, progress }: LandingProps) => {
       <div className="landing-hero-section">
         {/* Left Column: Content & CTAs */}
         <div className="landing-left-column">
-          {/* Account Notice */}
-          <motion.div
-            className="landing-account-notice"
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            ℹ️ Progress is saved locally on this device. Account features coming soon!
-          </motion.div>
-
           {/* Main Headline */}
           <motion.h1
             className="landing-headline"
@@ -281,6 +271,9 @@ const Landing = ({ onNavigate, progress }: LandingProps) => {
 
       {/* Footer */}
       <footer className="landing-footer">
+        <div className="landing-footer-notice">
+          ℹ️ Progress is saved locally on this device. Account features coming soon!
+        </div>
         <a
           href="https://www.augustwheel.com"
           target="_blank"

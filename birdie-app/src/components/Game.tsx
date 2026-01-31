@@ -264,6 +264,9 @@ const Game = ({
           </>
         ) : (
           <>
+            <button className="next-button" onClick={onNext}>
+              {currentSet < sets.length - 1 ? 'NEXT SET' : 'SEE RESULTS'}
+            </button>
             {valentineFactForRound && valentineEvent && (
               <div className="between-rounds-valentine">
                 <div className="valentine-heart-icon">💕</div>
@@ -271,9 +274,6 @@ const Game = ({
                 <p>{valentineFactForRound.fact}</p>
               </div>
             )}
-            <button className="next-button" onClick={onNext}>
-              {currentSet < sets.length - 1 ? 'NEXT SET' : 'SEE RESULTS'}
-            </button>
             <div className="mobile-bird-nav revealed">
               {set.birds.map((_, index) => (
                 <button

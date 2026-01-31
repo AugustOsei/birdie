@@ -49,11 +49,11 @@
 /* LEFT COLUMN: Content & CTAs */
 
 .landing-left-column {
-  padding: 3rem 4rem;
+  padding: 2rem 3rem;
   max-width: 600px;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
   position: relative;
   z-index: 2;
 }
@@ -73,7 +73,7 @@
 
 /* Headline - Bold & Playful */
 .landing-headline {
-  font-size: 4.5rem;
+  font-size: 3.8rem;
   font-weight: 900;
   color: var(--color-forest);
   line-height: 1;
@@ -83,7 +83,7 @@
 }
 
 .landing-tagline {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   color: #333;
   font-weight: 600;
   margin: 0;
@@ -94,12 +94,12 @@
 .landing-streak {
   display: inline-flex;
   align-items: center;
-  gap: 0.8rem;
-  padding: 0.9rem 1.5rem;
+  gap: 0.6rem;
+  padding: 0.7rem 1.2rem;
   background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
   color: white;
   border-radius: 20px;
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   font-weight: 700;
   box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
   width: fit-content;
@@ -111,22 +111,22 @@
 .landing-cta-group {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
-  margin-top: 1rem;
+  gap: 0.9rem;
+  margin-top: 0.5rem;
 }
 
 .landing-cta {
-  padding: 1.4rem 2rem;
+  padding: 1.1rem 1.8rem;
   border: none;
   border-radius: 18px;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 800;
   cursor: pointer;
   text-transform: uppercase;
   letter-spacing: 1px;
   display: flex;
   align-items: center;
-  gap: 0.8rem;
+  gap: 0.7rem;
   transition: all 0.3s ease;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
   position: relative;
@@ -150,7 +150,7 @@
 }
 
 .cta-icon {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   position: relative;
   z-index: 1;
 }
@@ -240,8 +240,8 @@
 
 /* Progress Info */
 .landing-progress {
-  margin-top: 1.5rem;
-  padding-top: 1.5rem;
+  margin-top: 0.8rem;
+  padding-top: 0.8rem;
   border-top: 2px dashed rgba(88, 204, 2, 0.3);
 }
 
@@ -274,7 +274,7 @@
 .landing-hero-image-wrapper {
   position: relative;
   width: 100%;
-  max-width: 500px;
+  max-width: 580px;
   aspect-ratio: 1;
   filter: drop-shadow(0 20px 60px rgba(0, 0, 0, 0.2));
 }
@@ -303,31 +303,31 @@
 /* ========== FEATURE TEASERS SECTION ========== */
 
 .landing-teasers {
-  padding: 5rem 4rem;
+  padding: 3rem 2rem;
   background: linear-gradient(180deg, transparent 0%, rgba(88, 204, 2, 0.05) 100%);
   max-width: 1200px;
   margin: 0 auto;
 }
 
 .landing-teasers-title {
-  font-size: 2.8rem;
+  font-size: 2.2rem;
   font-weight: 900;
   color: var(--color-forest);
   text-align: center;
-  margin: 0 0 3rem 0;
+  margin: 0 0 2rem 0;
   text-shadow: 2px 2px 0px rgba(88, 204, 2, 0.15);
 }
 
 .landing-teasers-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2.5rem;
+  gap: 1.8rem;
 }
 
 .landing-teaser {
   background: rgba(255, 255, 255, 0.95);
   border-radius: 20px;
-  padding: 2.5rem 2rem;
+  padding: 1.8rem 1.5rem;
   text-align: center;
   box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
   border: 2px solid rgba(88, 204, 2, 0.1);
@@ -355,26 +355,26 @@
 }
 
 .teaser-icon {
-  font-size: 3.5rem;
-  margin-bottom: 1.2rem;
+  font-size: 3rem;
+  margin-bottom: 0.8rem;
   display: inline-block;
   position: relative;
   z-index: 1;
 }
 
 .teaser-title {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 800;
   color: var(--color-forest);
-  margin: 0 0 0.8rem 0;
+  margin: 0 0 0.6rem 0;
   position: relative;
   z-index: 1;
 }
 
 .teaser-description {
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: #666;
-  line-height: 1.6;
+  line-height: 1.5;
   margin: 0;
   position: relative;
   z-index: 1;
@@ -383,15 +383,15 @@
 /* ========== BADGE SECTION ========== */
 
 .landing-badge-section {
-  padding: 3rem 4rem;
+  padding: 2rem 2rem;
   background: linear-gradient(135deg, rgba(255, 215, 0, 0.05) 0%, rgba(88, 204, 2, 0.05) 100%);
 }
 
 .badge-showcase {
   display: flex;
   align-items: center;
-  gap: 2rem;
-  padding: 2rem 2.5rem;
+  gap: 1.5rem;
+  padding: 1.5rem 2rem;
   background: rgba(255, 255, 255, 0.95);
   border-radius: 20px;
   box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1);
@@ -401,7 +401,7 @@
 }
 
 .badge-showcase-icon {
-  font-size: 3.5rem;
+  font-size: 3rem;
   flex-shrink: 0;
 }
 
@@ -410,14 +410,14 @@
 }
 
 .badge-showcase-name {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   color: var(--color-forest);
   font-weight: 800;
-  margin: 0 0 0.4rem 0;
+  margin: 0 0 0.3rem 0;
 }
 
 .badge-showcase-description {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: #666;
   line-height: 1.4;
   margin: 0;
@@ -439,10 +439,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 3rem;
-  padding: 3rem 2rem;
+  gap: 2.5rem;
+  padding: 2rem 2rem;
   background: linear-gradient(135deg, var(--color-primary-green) 0%, #4caf00 100%);
-  margin: 3rem auto;
+  margin: 2rem auto;
   max-width: 600px;
   border-radius: 25px;
   box-shadow: 0 12px 40px rgba(88, 204, 2, 0.3);
@@ -456,16 +456,16 @@
 }
 
 .stats-number {
-  font-size: 2.5rem;
+  font-size: 2.1rem;
   font-weight: 900;
   line-height: 1;
 }
 
 .stats-label {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 700;
-  letter-spacing: 1px;
-  margin-top: 0.4rem;
+  letter-spacing: 0.5px;
+  margin-top: 0.3rem;
   text-transform: uppercase;
   opacity: 0.95;
 }
@@ -480,15 +480,22 @@
 
 .landing-footer {
   text-align: center;
-  padding: 2rem;
+  padding: 1.5rem 2rem;
   border-top: 2px solid rgba(88, 204, 2, 0.1);
   background: rgba(255, 255, 255, 0.5);
+}
+
+.landing-footer-notice {
+  font-size: 0.8rem;
+  color: #1976d2;
+  margin-bottom: 1rem;
+  font-weight: 500;
 }
 
 .landing-footer-link {
   color: #666;
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 600;
   transition: all 0.3s ease;
   position: relative;
@@ -526,10 +533,11 @@
   .landing-left-column {
     padding: 0;
     max-width: 100%;
+    gap: 0.8rem;
   }
 
   .landing-headline {
-    font-size: 3.5rem;
+    font-size: 3rem;
   }
 
   .landing-right-column {
@@ -559,17 +567,17 @@
   }
 
   .landing-left-column {
-    padding: 1.5rem;
-    gap: 1rem;
+    padding: 1rem 1.5rem;
+    gap: 0.8rem;
   }
 
   .landing-headline {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     text-shadow: none;
   }
 
   .landing-tagline {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   .landing-right-column {
@@ -582,13 +590,13 @@
   }
 
   .landing-cta {
-    padding: 1.1rem 1.5rem;
-    font-size: 1rem;
+    padding: 0.9rem 1.3rem;
+    font-size: 0.95rem;
     letter-spacing: 0.5px;
   }
 
   .cta-icon {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 
   .landing-cta-love::after {
@@ -599,69 +607,65 @@
   }
 
   .landing-teasers {
-    padding: 3rem 1.5rem;
+    padding: 2rem 1.5rem;
   }
 
   .landing-teasers-title {
-    font-size: 2rem;
-    margin-bottom: 2rem;
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
   }
 
   .landing-teasers-grid {
-    gap: 1.5rem;
+    gap: 1.2rem;
   }
 
   .landing-teaser {
-    padding: 1.8rem 1.5rem;
+    padding: 1.3rem 1.2rem;
   }
 
   .teaser-icon {
-    font-size: 2.5rem;
-    margin-bottom: 0.8rem;
+    font-size: 2.2rem;
+    margin-bottom: 0.6rem;
   }
 
   .teaser-title {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   .teaser-description {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
 
   .badge-showcase {
     flex-direction: column;
     text-align: center;
-    gap: 1.5rem;
-    padding: 1.5rem;
+    gap: 1.2rem;
+    padding: 1.2rem;
     max-width: 100%;
   }
 
   .badge-showcase-icon {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 
   .landing-stats {
-    gap: 1.5rem;
-    padding: 2rem 1.5rem;
-    margin: 2rem 1rem;
+    gap: 1.8rem;
+    padding: 1.5rem 1.3rem;
+    margin: 1.5rem 1rem;
   }
 
   .stats-number {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
 
   .stats-divider {
-    height: 40px;
+    height: 35px;
   }
 
   .landing-progress {
     border-top: none;
-    margin-top: 0.5rem;
-  }
-
-  .landing-account-notice {
-    font-size: 0.8rem;
-    padding: 0.8rem 1rem;
+    margin-top: 0.3rem;
+    font-size: 0.85rem;
   }
 }
 

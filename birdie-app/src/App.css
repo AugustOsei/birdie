@@ -330,19 +330,19 @@ body {
 
 .game-header {
   text-align: center;
-  padding: 1rem;
+  padding: 0.7rem;
   color: #2C5F2D;
 }
 
 .game-header h2 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.6rem;
+  margin-bottom: 0.4rem;
 }
 
 .progress-indicator {
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: #555;
-  margin-bottom: 1rem;
+  margin-bottom: 0.7rem;
 }
 
 .progress-bar-container {
@@ -371,15 +371,15 @@ body {
 
 .bird-wire {
   position: relative;
-  margin: 2rem auto;
+  margin: 1rem auto;
   max-width: 1200px;
-  padding: 2rem;
+  padding: 1rem 2rem;
 }
 
 .wire {
   position: relative;
   height: 20px;
-  margin: 2rem 0;
+  margin: 1rem 0;
 }
 
 .birds-on-wire {
@@ -582,7 +582,7 @@ body {
 
 .game-actions {
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 1.2rem;
 }
 
 .submit-button,
@@ -590,9 +590,9 @@ body {
   background: #2C5F2D;
   color: white;
   border: none;
-  padding: 1rem 3rem;
+  padding: 0.9rem 2.5rem;
   border-radius: 30px;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -2075,29 +2075,29 @@ body {
   background: linear-gradient(135deg, #FFB6D9 0%, #FFC0D9 100%);
   border: 2px solid #FF69B4;
   border-radius: 20px;
-  padding: 1.5rem;
-  margin: 1.5rem 0;
+  padding: 1.1rem 1.2rem;
+  margin: 1rem 0;
   text-align: center;
   animation: slideIn 0.5s ease-out;
   box-shadow: 0 4px 15px rgba(255, 105, 180, 0.2);
 }
 
 .between-rounds-valentine .valentine-heart-icon {
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
+  font-size: 2.5rem;
+  margin-bottom: 0.3rem;
   animation: heartBeat 1.2s ease-in-out infinite;
 }
 
 .between-rounds-valentine h3 {
   color: #C2185B;
-  font-size: 1.3rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
 }
 
 .between-rounds-valentine p {
   color: #880E4F;
-  font-size: 0.95rem;
-  line-height: 1.6;
+  font-size: 0.85rem;
+  line-height: 1.5;
   font-style: italic;
 }
 
