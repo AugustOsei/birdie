@@ -632,6 +632,13 @@ body {
   margin-top: 1.2rem;
 }
 
+/* Mobile: Reduce spacing between bird options and navigation */
+@media (max-width: 768px) {
+  .game-actions {
+    margin-top: 0.5rem;
+  }
+}
+
 .submit-button,
 .next-button {
   background: #2C5F2D;
