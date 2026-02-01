@@ -115,6 +115,14 @@
   margin-top: 0.5rem;
 }
 
+/* Mobile: Much tighter button spacing */
+@media (max-width: 768px) {
+  .landing-cta-group {
+    gap: 0.4rem;
+    margin-top: 0.3rem;
+  }
+}
+
 .landing-cta {
   padding: 1.1rem 1.8rem;
   border: none;
@@ -243,6 +251,14 @@
   margin-top: 0.8rem;
   padding-top: 0.8rem;
   border-top: 2px dashed rgba(88, 204, 2, 0.3);
+}
+
+/* Mobile: Move progress much closer to buttons */
+@media (max-width: 768px) {
+  .landing-progress {
+    margin-top: 0.3rem;
+    padding-top: 0.3rem;
+  }
 }
 
 .landing-badges-count,
@@ -570,7 +586,7 @@
 
   .landing-left-column {
     padding: 1rem 1.5rem;
-    gap: 0.8rem;
+    gap: 0.3rem;
   }
 
   .landing-headline {
@@ -585,7 +601,7 @@
   .landing-right-column {
     max-height: 100%;
     padding: 0;
-    margin: 0;
+    margin: 0.3rem 0;
     width: 100vw;
     position: relative;
     left: 50%;
