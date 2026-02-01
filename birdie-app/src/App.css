@@ -423,6 +423,14 @@ body {
   padding: 1rem 2rem;
 }
 
+/* Mobile: Reduce bottom padding to bring controls closer */
+@media (max-width: 768px) {
+  .bird-wire {
+    padding-bottom: 0.3rem;
+    margin-bottom: 0;
+  }
+}
+
 .wire {
   position: relative;
   height: 20px;
@@ -1001,6 +1009,7 @@ body {
   .bird-container {
     width: 100%;
     max-width: 300px;
+    gap: 0.5rem;
   }
 
   .bird-container.mobile-hidden {
