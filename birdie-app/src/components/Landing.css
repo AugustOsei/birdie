@@ -560,7 +560,7 @@
     grid-template-columns: 1fr;
     padding-top: 60px;
     min-height: auto;
-    gap: 1rem;
+    gap: 0.3rem;
   }
 
   .landing-hero-section::before {
@@ -584,7 +584,7 @@
   .landing-right-column {
     max-height: 100%;
     padding: 0;
-    margin: 0.3rem 0;
+    margin: 0;
     width: 100vw;
     position: relative;
     left: 50%;
@@ -617,7 +617,7 @@
   }
 
   .landing-teasers {
-    padding: 0.5rem 1.5rem 2rem;
+    padding: 0 1.5rem 2rem;
   }
 
   .landing-teasers-title {
