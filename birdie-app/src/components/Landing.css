@@ -558,7 +558,8 @@
 @media (max-width: 768px) {
   .landing-hero-section {
     grid-template-columns: 1fr;
-    padding-top: 60px;
+    padding-top: 0;
+    padding-bottom: 0;
     min-height: auto;
     gap: 0.3rem;
   }
@@ -568,7 +569,7 @@
   }
 
   .landing-left-column {
-    padding: 1rem 1.5rem;
+    padding: 0.3rem 1.5rem 0;
     gap: 0.3rem;
   }
 
