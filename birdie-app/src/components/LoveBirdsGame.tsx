@@ -70,7 +70,7 @@ const LoveBirdsGame = ({
       </div>
 
       <div className="love-birds-question">
-        <h2>Which bird mates for life?</h2>
+        <h2>Which one bird mates for life?</h2>
         <div className="birds-grid">
           {currentQuestion.options.map((bird) => {
             const isSelected = feedbackBirdId === bird.id;

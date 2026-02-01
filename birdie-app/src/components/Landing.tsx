@@ -9,6 +9,8 @@ import './Landing.css';
 interface LandingProps {
   onNavigate: (screen: Screen) => void;
   progress: UserProgress;
+  isMuted?: boolean;
+  onToggleMute?: () => void;
 }
 
 // Animation variants
@@ -50,11 +52,11 @@ const headlineVariant = {
 };
 
 const teaserVariant = {
-  hidden: { opacity: 0, y: 40 },
+  hidden: { opacity: 0, y: 20 },
   visible: (index: number) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: 1.2 + index * 0.15, duration: 0.6, ease: 'easeOut' as any },
+    transition: { delay: index * 0.1, duration: 0.4, ease: 'easeOut' as any },
   }),
 };
 
@@ -63,12 +65,23 @@ const buttonHoverVariant = {
   transition: { duration: 0.3 },
 };
 
-const Landing = ({ onNavigate, progress }: LandingProps) => {
+const Landing = ({ onNavigate, progress, isMuted, onToggleMute }: LandingProps) => {
   const [showProModal, setShowProModal] = useState(false);
   const canPlayPro = canPlayBirdieProNow(progress);
 
   return (
     <>
+      {/* Mute Button */}
+      {onToggleMute && (
+        <button
+          className="landing-mute-button"
+          onClick={onToggleMute}
+          aria-label={isMuted ? 'Unmute sounds' : 'Mute sounds'}
+        >
+          {isMuted ? '🔇' : '🔊'}
+        </button>
+      )}
+
       {/* Main Hero Section */}
       <div className="landing-hero-section">
         {/* Left Column: Content & CTAs */}
@@ -178,14 +191,12 @@ const Landing = ({ onNavigate, progress }: LandingProps) => {
             className="landing-hero-image-wrapper"
             variants={heroImageVariant}
             initial="hidden"
-            animate="visible"
+            animate={["visible", "float"]}
           >
-            <motion.img
+            <img
               src="/birdland4.png"
               alt="Birdland - Love Birds"
               className="landing-hero-image"
-              animate="float"
-              variants={heroImageVariant}
               loading="eager"
             />
             <div className="landing-image-glow" />
@@ -199,8 +210,8 @@ const Landing = ({ onNavigate, progress }: LandingProps) => {
           className="landing-teasers-title"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
         >
           What's New in Birdie
         </motion.h2>
@@ -213,7 +224,7 @@ const Landing = ({ onNavigate, progress }: LandingProps) => {
             variants={teaserVariant}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-80px" }}
           >
             <div className="teaser-icon">❤️</div>
             <h3 className="teaser-title">Heart Multiplier</h3>
@@ -229,7 +240,7 @@ const Landing = ({ onNavigate, progress }: LandingProps) => {
             variants={teaserVariant}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-80px" }}
           >
             <div className="teaser-icon">🌹</div>
             <h3 className="teaser-title">Romantic Bird Facts</h3>

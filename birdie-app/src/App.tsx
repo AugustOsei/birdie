@@ -221,6 +221,8 @@ function App() {
           <Landing
             onNavigate={handleNavigate}
             progress={progress}
+            isMuted={progress.muteSounds}
+            onToggleMute={handleToggleMute}
           />
         );
       case 'game':
@@ -290,6 +292,8 @@ function App() {
           <Landing
             onNavigate={handleNavigate}
             progress={progress}
+            isMuted={progress.muteSounds}
+            onToggleMute={handleToggleMute}
           />
         );
     }
