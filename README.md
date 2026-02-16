@@ -1,51 +1,73 @@
 # Birdie 🐦
 
-A fun bird identification game where players collect badges by demonstrating their birding skills!
+Birdie is a web-based bird identification game.
 
 ## 🎮 About
 
-Birdie is a web-based game that challenges users to identify birds correctly. Players can:
+Players can:
 - Identify birds from images
 - Earn badges for achievements
-- Build streaks with perfect scores
 - Learn fun facts about birds
-- Track their progress locally
+- Track progress locally (no accounts)
 
 ## 🏗️ Architecture
 
 ```
-birdie.augustwheel.com
-    ↓
-Docker Compose Stack:
-├── Frontend (React + Vite + Nginx)
-├── Backend (Express.js + SQLite)
-├── Nginx Reverse Proxy (SSL termination)
-└── Certbot (SSL certificate management)
+Internet
+  ↓
+Reverse proxy / TLS
+  ↓
+Docker Compose
+  ├── Frontend (React + Vite)
+  └── Backend (Express.js + SQLite)
 ```
 
 ## 📁 Project Structure
 
 ```
 Birdie/
-├── birdie-app/          # Frontend React application
-│   ├── src/
-│   ├── public/
-│   ├── Dockerfile
-│   └── nginx.conf
+├── birdie-app/          # Frontend
 ├── backend/             # Backend API
-│   ├── src/
-│   │   ├── server.js
-│   │   └── database.js
-│   ├── package.json
-│   └── Dockerfile
-├── nginx/              # Nginx reverse proxy config
-│   ├── nginx.conf
-│   └── conf.d/
-│       └── birdie.conf
-├── docker-compose.yml  # Orchestration
-├── deploy.sh          # Deployment script
-├── .env.example       # Environment template
-└── README.md          # This file
+├── nginx/               # Reverse proxy config (optional)
+├── docker-compose.yml   # Orchestration
+├── deploy.sh            # Helper script (optional)
+├── .env.example         # Environment template
+├── DEPLOYMENT.md
+├── SECURITY.md
+└── README.md
 ```
 
+## 🚀 Deployment
 
+See [`DEPLOYMENT.md`](./DEPLOYMENT.md).
+
+## 🛠️ Local Development
+
+```bash
+# backend
+cd backend
+npm install
+npm run dev
+
+# frontend (new terminal)
+cd ../birdie-app
+npm install
+npm run dev
+```
+
+## 📝 API Endpoints
+
+**Public**
+- `GET /api/health`
+- `POST /api/subscribe`
+
+**Admin**
+- `GET /api/admin/export` (requires server-side API key)
+
+## 🔐 Security
+
+See [`SECURITY.md`](./SECURITY.md).
+
+## 📄 License
+
+MIT
