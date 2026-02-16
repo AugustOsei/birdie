@@ -48,76 +48,10 @@ Birdie/
 └── README.md          # This file
 ```
 
-## 🚀 Deployment Instructions
+## 🚀 Deployment
 
-### Prerequisites
+See [`DEPLOYMENT.md`](./DEPLOYMENT.md).
 
-1. **EC2 Instance** (Ubuntu 22.04 or later)
-   - Minimum: t2.small (2 GB RAM)
-   - Recommended: t2.medium (4 GB RAM)
-   - Storage: 20 GB+
-   - Security Groups: Allow ports 80 (HTTP) and 443 (HTTPS)
-
-2. **Domain**: `birdie.augustwheel.com` pointed to your EC2 instance IP
-
-3. **GoDaddy DNS Setup**:
-   - Go to GoDaddy DNS Management
-   - Add an A record:
-     - Type: A
-     - Name: birdie
-     - Value: [Your EC2 Public IP]
-     - TTL: 600 seconds
-
-### Step 1: Initial Server Setup
-
-SSH into your EC2 instance:
-
-```bash
-ssh -i your-key.pem ubuntu@your-ec2-ip
-```
-
-Update the system:
-
-```bash
-sudo apt update && sudo apt upgrade -y
-```
-
-### Step 2: Clone Repository
-
-```bash
-cd ~
-git clone https://github.com/YOUR_USERNAME/Birdie.git
-cd Birdie
-```
-
-### Step 3: Configure Environment
-
-```bash
-# Copy environment template
-cp .env.example .env
-
-# Edit with your settings
-nano .env
-```
-
-Update the email in `.env`:
-```
-LETSENCRYPT_EMAIL=your-email@augustwheel.com
-```
-
-### Step 4: Run Deployment Script
-
-```bash
-# Make script executable (if not already)
-chmod +x deploy.sh
-
-# Run deployment
-./deploy.sh
-```
-
-The script will:
-1. Install Docker and Docker Compose
-2. Create necessary directories
 3. Obtain SSL certificate from Let's Encrypt
 4. Build and start all containers
 5. Verify service health
@@ -365,7 +299,7 @@ VITE_API_URL=http://localhost:3001
 
 ### Admin Endpoints
 
-- `GET /api/admin/export` - Export subscribers as CSV (TODO: Add authentication)
+- `GET /api/admin/export` - Export subscribers as CSV (**requires server-side API key**)
 
 ## 🔮 Future Features
 
@@ -390,4 +324,4 @@ This is a personal project, but feedback and suggestions are welcome!
 
 ---
 
-Made with ❤️ and ☕
+Made with care
