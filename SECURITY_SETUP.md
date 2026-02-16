@@ -19,7 +19,7 @@ The `/api/admin/*` endpoints are protected with API key authentication.
 
 3. **Add the API key**:
    ```env
-   ADMIN_API_KEY=817200522e0aed6d55a7ee2458930701bcb6127f7e20ced46e021d449a134eb1
+   ADMIN_API_KEY=YOUR_STRONG_RANDOM_KEY_HERE
    ```
 
 4. **Save and exit** (Ctrl+X, then Y, then Enter)
@@ -44,23 +44,18 @@ The `/api/admin/*` endpoints are protected with API key authentication.
 **From EC2 server**:
 ```bash
 # Using header
-docker exec birdie-backend wget --header="x-api-key: 817200522e0aed6d55a7ee2458930701bcb6127f7e20ced46e021d449a134eb1" -qO- http://localhost:3001/api/admin/export
+docker exec birdie-backend wget --header="x-api-key: $ADMIN_API_KEY" -qO- http://localhost:3001/api/admin/export
 ```
 
 **From browser or curl**:
 ```bash
 # Using query parameter
-curl "https://birdie.augustwheel.com/api/admin/export?key=817200522e0aed6d55a7ee2458930701bcb6127f7e20ced46e021d449a134eb1"
-
-# Or using header (more secure)
-curl -H "x-api-key: 817200522e0aed6d55a7ee2458930701bcb6127f7e20ced46e021d449a134eb1" \
+# Prefer header (don’t put secrets in URLs)
+curl -H "x-api-key: $ADMIN_API_KEY" \
   https://birdie.augustwheel.com/api/admin/export
 ```
 
-**In browser** (query parameter):
-```
-https://birdie.augustwheel.com/api/admin/export?key=817200522e0aed6d55a7ee2458930701bcb6127f7e20ced46e021d449a134eb1
-```
+**In browser**: use a tool like Postman / curl with the `x-api-key` header (avoid putting keys in URLs).
 
 ---
 
@@ -129,9 +124,7 @@ For production with multiple admins, consider:
 
 ---
 
-**Your API Key** (KEEP SECRET!):
-```
-817200522e0aed6d55a7ee2458930701bcb6127f7e20ced46e021d449a134eb1
-```
-
-Save this somewhere safe (password manager, encrypted note, etc.)!
+**Your API Key**:
+- Generate it on the server: `openssl rand -hex 32`
+- Store it in `.env` (never in git)
+- Keep it in a password manager
